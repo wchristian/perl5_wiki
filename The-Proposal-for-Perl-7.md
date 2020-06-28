@@ -137,7 +137,13 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 1. no indirect
 
 ## Not to be included
+
+NOTE that anything not included in 7.0, should probably lead to a discussion in 7.1 about if the feature could be improved in some way to make it more generally available down the road.
+
 1. feature_switch
+1. use utf8 (`$^H |= 0x00800000;`)
+    * This setting is currently very disruptive to several major code bases.
+
 
 
 
