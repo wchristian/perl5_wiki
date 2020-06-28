@@ -89,6 +89,14 @@ A module called `Module::Compatibility` is being worked on right now. It will be
 
 Once this code is run, we believe that all CPAN modules can install on Perl 7 without issue. This is not necessarily how the migration from 7 to 8 will go. But it provides a quick win and overcomes the major blocker to making it to Perl 7.
 
+# Dual Life modules
+
+One of the goals of 7.0 will be to eat our own dog food. As much code as possible will be brought up to 7.0 standards to set an example of how code should be used. This also provides a platform to prove that the standards work without issue.
+
+Some dual life modules may present a challenge using 7.0. In some cases, it may be necessary to turn off some features temporarily until a better fix can be found. As an example, prototypes are only compatible with subroutine signatures as of Perl 5.20.0 So Test::Simple would either have to stop using prototypes or have `use if $] < 5.20 no feature 'signatures';` in its code. 
+
+As part of the research for this project we have reached out to some authors and found some of the CPAN maintained dual life modules to be unmaintained. On a case by case basis, it may be wise to move the modules from cpan/ to dist/ in order to provide better maintenance.
+
 # FAQ
 
 Q: Why not `use v7` and then default all other code to Perl 7.
