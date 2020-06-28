@@ -101,6 +101,7 @@ As part of the research for this project we have reached out to some authors and
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
 
 1. Agree on what defaults will change for Perl 7.
+1. Agree on how -e and -E will work.
 1. Update blead perl code so that all files loaded by Perl 7 work the new defaults.
 1. Update XS to be compatible with perl 7
 1. Test dist/ modules and determine if they need to be modified in order to live on CPAN
