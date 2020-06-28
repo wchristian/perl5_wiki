@@ -45,7 +45,6 @@ sub import {
         'feature_say'      => 1,
         'feature_signatures'      => 1,
         'feature_state'      => 1,
-        'feature_switch'      => 1,
         'feature_unicode_eval'      => 1,
     );
 }
@@ -150,7 +149,8 @@ NOTE that anything not included in 7.0, should probably lead to a discussion in 
 1. feature_switch
 1. use utf8 (`$^H |= 0x00800000;`)
     * This setting is currently very disruptive to several major code bases.
-
+1. unicode_strings / bitwise / unicode_eval
+    * I would have loved to add these at 7.x but I don’t know how feasible they may be. Python has tried doing it for a good few years now with continuous difficulties. They’ve resolved to keep releasing versions of 2.x since people kept refusing to upgrade to Python 3.0. Python 2.7.18 is supposedly the final Python 2 release. In short: Subtly changing behavior of functions (which the above do) is not something to be taken lightly. We should discuss these.
 
 
 
