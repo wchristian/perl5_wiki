@@ -84,8 +84,13 @@ sub import {
 # CPAN compatibility with Perl 7
 
 A module called `Module::Compatibility` is being worked on right now. It will be invoked by CPAN clients but potentially other code. It will to the following:
-1. Walk a directory tree and find any perl modules or perl scripts. As the first line (after the BOM and `#!`), `use compat::perl5` will be inserted.
+1. Walk a directory tree and find any perl modules or perl scripts. As the first line (after the BOM and `#!`), ```use compat::perl5``` will be inserted.
 2. Find any C or XS code and correct `#if` logic which assumes the major version is Perl 5.
 
 Once this code is run, we believe that all CPAN modules can install on Perl 7 without issue. This is not necessarily how the migration from 7 to 8 will go. But it provides a quick win and overcomes the major blocker to making it to Perl 7.
+
+# FAQ
+
+Q: Why not `use v7` and then default all other code to Perl 7.
+A: This continues to expect the people least in the know to put "tribal knowledge" in their code it make it run in a more modern way.
 
