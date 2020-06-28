@@ -99,6 +99,8 @@ As part of the research for this project we have reached out to some authors and
 
 # FAQ
 
-Q: Why not `use v7` and then default all other code to Perl 7.
-A: This continues to expect the people least in the know to put "tribal knowledge" in their code it make it run in a more modern way.
+**Q:** Why not `use v7` and then default all other code to Perl 7.
+
+**A:** This continues to expect the people least in the know to put "tribal knowledge" in their code it make it run in a more modern way.
+
 
