@@ -163,9 +163,9 @@ NOTE that anything not included in 7.0, should probably lead to a discussion in 
 
 ---
 
-**Q:** 
+**Q:** What about github.com/perl/perl5 is it named wrong now?
 
-**A:** 
+**A:** Yes it is. Github will let us rename the repo and redirects should work correctly.
 
 ---
 
