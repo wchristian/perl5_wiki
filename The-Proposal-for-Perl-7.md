@@ -119,22 +119,29 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 
 # Initial proposal for defalts (**FOR DISCUSSION**)
 
-## To be included 
+## Features not experimental anymore
+1. current_sub
+1. postderef
+1. postderef_qq
+1. signatures
+1. lexical_sub
+
+## To be included
 1. use strict;
 1. use warnings;
     * Are there warnings we should turn off by default?
-1. feature_bitwise
-1. feature_current_sub
-1. feature_declared_refs
-1. feature_evalbytes
-1. feature_fc
-1. feature_postderef_qq
-1. feature_refaliasing
-1. feature_say
-1. feature_signatures
-1. feature_state
-1. feature_unicode_eval
-1. no indirect
+1. feature bitwise
+1. feature current_sub
+1. feature declared_refs
+1. feature evalbytes
+1. feature fc
+1. feature postderef_qq
+1. feature refaliasing
+1. feature say
+1. feature signatures
+1. feature state
+1. feature unicode_eval
+1. no feature indirect
 
 ## Not to be included
 
