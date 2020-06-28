@@ -150,9 +150,9 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 
 ---
 
-**Q:** Is CPAN going to have a long term problem if Perl starts making backward incompatible changes?
+**Q:** 
 
-**A:** Potentially. As part of early research for Perl 7, we explored tools that would
+**A:** 
 
 ---
 
