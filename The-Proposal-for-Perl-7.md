@@ -97,10 +97,67 @@ Some dual life modules may present a challenge using 7.0. In some cases, it may 
 
 As part of the research for this project we have reached out to some authors and found some of the CPAN maintained dual life modules to be unmaintained. On a case by case basis, it may be wise to move the modules from cpan/ to dist/ in order to provide better maintenance.
 
+# Requirements for shipping Perl 7
+
+The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
+
+1. Agree on what defaults will change for Perl 7.
+1. Update blead perl code so that all files loaded by Perl 7 work the new defaults.
+1. Update XS to be compatible with perl 7
+1. Test dist/ modules and determine if they need to be modified in order to live on CPAN
+1. Get as many blead cpan/ authors to update their code to be compatible with Perl 7.
+1. Test Perl 7 against CPAN via Module::Compatibility
+1. Update cpan clients to work with Perl 7
+1. Update pod/ policy documents to state how development has changed.
+
+# Optional items for Perl 7.
+
+1. Provide tooling to auto-upgrade code to be compatible with Perl 7.
+    * Convert prototypes to use `:prototype` so they are compatible with subroutine signatures
+    * detect and warn about subroutines named fc, say, state, switch, etc. (depending on what p7 defaults are chosen)
+1. Have a plan for documentation changes (7.1?)
+
+# Initial proposal for defalts (**FOR DISCUSSION**)
+
+## To be included 
+1. use strict;
+1. use warnings;
+    * Are there warnings we should turn off by default?
+1. feature_bitwise
+1. feature_current_sub
+1. feature_declared_refs
+1. feature_evalbytes
+1. feature_fc
+1. feature_postderef_qq
+1. feature_refaliasing
+1. feature_say
+1. feature_signatures
+1. feature_state
+1. feature_unicode_eval
+1. no indirect
+
+## Not to be included
+1. feature_switch
+
+
+
+
 # FAQ
 
 **Q:** Why not `use v7` and then default all other code to Perl 7.
 
 **A:** This continues to expect the people least in the know to put "tribal knowledge" in their code it make it run in a more modern way.
 
+---
 
+**Q:** Is CPAN going to have a long term problem if Perl starts making backward incompatible changes?
+
+**A:** Potentially. As part of early research for Perl 7, we explored tools that would
+
+---
+
+**Q:** 
+
+**A:** 
+
+---
