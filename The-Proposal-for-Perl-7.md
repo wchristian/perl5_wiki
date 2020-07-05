@@ -1,4 +1,6 @@
-This is the proposal with additional details as presented by [xsawyerx](xsawyerx) at [The Conference in the Cloud 2020](https://perlconference.us/tpc-2020-cloud/)
+This is the proposal with additional details as presented by [xsawyerx](xsawyerx) at [The Conference in the Cloud 2020](https://perlconference.us/tpc-2020-cloud/).
+
+There are additional details in Sawyer's [update about versioning](https://www.nntp.perl.org/group/perl.perl5.porters/2020/06/msg257565.html).
 
 # Intro
 
@@ -6,7 +8,7 @@ This is the proposal with additional details as presented by [xsawyerx](xsawyerx
 
 # Perl Versioning
 
-Perl operate mostly on a [semantic versioning system](https://semver.org/) with the exception that development versions will have an odd numbered minor version
+Perl 5 operates mostly on a [semantic versioning system](https://semver.org/) with the exception that development versions will have an odd numbered minor version
 
 1. MAJOR version when you make incompatible API changes,
 1. MINOR version when you add functionality in a backwards compatible manner, and
@@ -82,18 +84,19 @@ sub import {
 
 # CPAN compatibility with Perl 7
 
-A module called `Module::Compatibility` is being worked on right now. It will be invoked by CPAN clients but potentially other code. It will do the following:
+A module called `Module::Compatibility` is being worked on right now. It will be invoked by CPAN clients but potentially other code. It will do the following like the following, although the specifics may change:
+
 1. Walk a directory tree and find any perl modules or perl scripts. As the first line (after the BOM and `#!`), ```use compat::perl5``` will be inserted.
     * Some string in the perl code or possibly `META.yml` can be used to prevent compat::perl5 from being inserted into it.
 2. Find any C or XS code and correct `#if` logic which assumes the major version is Perl 5.
 
-Once this code is run, we believe that all CPAN modules can install on Perl 7 without issue. This is not necessarily how the migration from 7 to 8 will go. But it provides a quick win and overcomes the major blocker to making it to Perl 7.
+Once this code is run, we believe that all CPAN modules can install on Perl 7 without an issue. This is not necessarily how the migration from 7 to 8 will go. But it provides a quick win and overcomes the major blocker to making it to Perl 7.
 
 # Dual Life modules
 
 One of the goals of 7.0 will be to eat our own dog food. As much code as possible will be brought up to 7.0 standards to set an example of how code should be used. This also provides a platform to prove that the standards work without issue.
 
-Some dual life modules may present a challenge using 7.0. In some cases, it may be necessary to turn off some features temporarily until a better fix can be found. As an example, prototypes are only compatible with subroutine signatures as of Perl 5.20.0 So Test::Simple would either have to stop using prototypes or have `use if $] < 5.20 no feature 'signatures';` in its code. 
+Some dual life modules may present a challenge using 7.0. In some cases, it may be necessary to turn off some features temporarily until a better fix can be found. As an example, prototypes are only compatible with subroutine signatures as of Perl 5.20.0. So Test::Simple would either have to stop using prototypes or have `use if $] < 5.20 no feature 'signatures';` in its code. 
 
 As part of the research for this project we have reached out to some authors and found some of the CPAN maintained dual life modules to be unmaintained. On a case by case basis, it may be wise to move the modules from cpan/ to dist/ in order to provide better maintenance.
 
@@ -153,15 +156,6 @@ NOTE that anything not included in 7.0, should probably lead to a discussion in 
     * This setting is currently very disruptive to several major code bases.
 1. unicode_strings / bitwise / unicode_eval
     * I would have loved to add these at 7.x but I don’t know how feasible they may be. Python has tried doing it for a good few years now with continuous difficulties. They’ve resolved to keep releasing versions of 2.x since people kept refusing to upgrade to Python 3.0. Python 2.7.18 is supposedly the final Python 2 release. In short: Subtly changing behavior of functions (which the above do) is not something to be taken lightly. We should discuss these.
-
-
-
-
-# FAQ
-
-**Q:** Why not `use v7` and then default all other code to Perl 7.
-
-**A:** This continues to expect the people least in the know to put "tribal knowledge" in their code it make it run in a more modern way.
 
 ---
 
