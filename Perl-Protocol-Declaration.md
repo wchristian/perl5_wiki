@@ -41,7 +41,7 @@ At this time (5 and 7) it really only affects `$^H`, `%^H`, and `$^WARNINGS` but
 The behavior can be simulated with this code on 5.30.0. It would be different per major version of perl 5.
 
 ```perl
-package compat::perl7;
+package p7;
 
 BEGIN {
     # This code is compiled for 5.030 to give you an idea of how you code will work on Perl 7.
@@ -77,9 +77,9 @@ sub import {
 Note that the only changes are the manipulation of `${^WARNING_BITS}`, `$^H`, `%^H`. As a result backwards compatibility for older perl code can be achieved easily by injecting use compat::perl5 which effectively reverses the new perl 7 defaults for the entire file.
 
 ```perl
-package compat::perl5;
+package p5;
 
-# use compat::perl5 should be the first thing in your code. Especially before use strict, warnings, v5.XXX, or feature.
+# use p5 should be the first thing in your code. Especially before use strict, warnings, v5.XXX, or feature.
 
 BEGIN {
     $] <= 8 or die("This code is incompatible with Perl 8. Please see XXX for more information.");
