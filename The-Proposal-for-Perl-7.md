@@ -62,7 +62,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     * detect and warn about subroutines named fc, say, state, switch, etc. (depending on what p7 defaults are chosen)
 1. Have a plan for documentation changes (7.1?)
 
-# Initial proposal for defalts (**FOR DISCUSSION**)
+# Initial proposal for defaults (**FOR DISCUSSION**)
 
 ## Features not experimental anymore
 1. current_sub
