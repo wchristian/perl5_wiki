@@ -47,11 +47,12 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 
 1. Agree on what defaults will change for Perl 7.
 1. Agree on how -e and -E will work (-5 by default)
-1. Add use v5/v7 to all perl code
+1. Add use v5 to all perl code
 1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
 1. Fix fresh_perl issues.
 1. Fix all perl XS to support PERL_MAJOR=7
 1. Module::Compatibility
+1. Update core perl code to use v7 where no changes are required.
 1. Test Suite passing
 1. Test Perl 7 against CPAN via Module::Compatibility
 1. Update cpan clients to work with Perl 7
