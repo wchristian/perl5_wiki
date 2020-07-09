@@ -14,6 +14,15 @@ use v7;
 use current; # Tell the parser to use the major of the current binary. 
 ```
 
+# Backward compatibility with Perl 5
+
+Perl 5 already understands `use v5;`. If Perl 5 sees `use v7`, it will stop with:
+
+```
+Perl v7.0.0 required--this is only v5.30.0, stopped.
+BEGIN failed--compilation aborted.
+```
+
 # Mixed protocols
 
 The following is allowed but won't technically work on perl 5:
