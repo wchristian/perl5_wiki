@@ -6,7 +6,7 @@ All parsed code must begin with use vX; It is a directive to the interpreter whi
 
 The following pragmas are required by perl 7 before any code is allowed to be parsed. Comments and whitespace are permissible. -x applies.
 
-```
+```perl
 use v5;
 use v7;
 
@@ -18,7 +18,7 @@ use current; # Tell the parser to use the major of the current binary.
 
 The following is allowed but won't technically work on perl 5:
 
-```
+```perl
 use v7;
 sub foo ($bar) {
     ...;
