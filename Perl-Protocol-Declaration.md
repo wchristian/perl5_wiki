@@ -23,6 +23,8 @@ Perl v7.0.0 required--this is only v5.30.0, stopped.
 BEGIN failed--compilation aborted.
 ```
 
+Which is exactly what v7 would 
+
 # Mixed protocols
 
 The following is allowed but won't technically work on perl 5:
