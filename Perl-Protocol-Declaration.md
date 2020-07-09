@@ -74,7 +74,7 @@ sub import {
 1;
 ```
 
-Note that the only changes are the manipulation of ${^WARNING_BITS}, $^H, %^H. As a result backwards compatibility for older perl code can be achieved easily by injecting use compat::perl5 which effectively reverses the new perl 7 defaults for the entire file.
+Note that the only changes are the manipulation of `${^WARNING_BITS}`, `$^H`, `%^H`. As a result backwards compatibility for older perl code can be achieved easily by injecting use compat::perl5 which effectively reverses the new perl 7 defaults for the entire file.
 
 ```perl
 package compat::perl5;
