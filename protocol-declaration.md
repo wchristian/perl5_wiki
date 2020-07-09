@@ -9,7 +9,9 @@ The following pragmas are required by perl 7 before any code is allowed to be pa
 ```
 use v5;
 use v7;
-use current; # Tell the parser to use the major of the current binary.
+
+# This is a placeholder. Open for bikeshed.
+use current; # Tell the parser to use the major of the current binary. 
 ```
 
 # Mixed protocols
