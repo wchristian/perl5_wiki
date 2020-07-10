@@ -24,7 +24,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     1. Provide a macro to compare major and minor versions, not just minor versions.
     1. Update [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to support the new XS macro in prior versions of Perl.
     1. Fix all blead XS to support `PERL_MAJOR=7`
-1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
+1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration) before it parses any code.
 1. [Module::Compatibility](Making-CPAN-work-on-Perl-7)
 1. Update core perl code to use v7 where no changes are required.
 1. Update cpan clients and EUMM/M::B to work with Perl 7
