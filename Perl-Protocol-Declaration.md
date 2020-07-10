@@ -22,6 +22,14 @@ You can get the preview version of the next major version
 use v8;
 ```
 
+We are still discussing the possibility of providing a pragma `current` which will set the defaults to the major version of the installed Perl. Both the name and the behavior are continuing to be discussed.
+
+```perl
+use current;
+```
+
+# Manipulating the defaults once they are set
+
 Perl 7 will honor `use v5.32` under `v5` code not not in 7 or later.
 
 You can still turn off defaults in all protocols by doing:
