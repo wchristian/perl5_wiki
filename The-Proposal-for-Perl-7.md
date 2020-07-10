@@ -15,7 +15,7 @@ brian's [perl7faq](https://github.com/briandfoy/perl7faq/blob/master/README.md).
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
 
 1. Agree on the [new defaults for Perl 7](Defaults-for-v7).
-1. Update pod/ policy documents to state how development has changed.
+1. Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
 1. Agree on how -e and -E will work (-5 by default)
 1. Add use v5 to all perl code
 1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
