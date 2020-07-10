@@ -8,7 +8,7 @@ brian's [perl7faq](https://github.com/briandfoy/perl7faq/blob/master/README.md).
 
 # Intro
 
-...
+7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed.
 
 # Perl Versioning
 
@@ -18,11 +18,7 @@ Perl 5 operates mostly on a [semantic versioning system](https://semver.org/) wi
 1. MINOR version when you add functionality in a backwards compatible manner, and
 1. PATCH version when you make backwards compatible bug fixes.
 
-# Perl 7.0.0
-
-7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed.
-
-# Requirements for shipping Perl 7
+# What we need to do before Perl 7
 
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
 
@@ -41,12 +37,20 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     1. Test Perl 7 against CPAN via Module::Compatibility
 1. RELEASE 7.0.0
 
-# Optional items for Perl 7.
+# Once Perl 7.0.0 is released.
 
+1. Merge v5.32.0..blead7 commits into blead.
+1. Bump blead to 7.1.0 and release it
+1. Bump blead to 7.1.1
+
+## There are several options we can pursue once blead is on 7.1
+
+1. Review and update code in blead to convert `use v5` code to `use v7`
+    1. Review modules in `cpan/` and address orphaned code where necessary.
 1. Provide tooling to auto-upgrade code to be compatible with Perl 7.
     * Convert prototypes to use `:prototype` so they are compatible with subroutine signatures
     * detect and warn about subroutines named fc, say, state, switch, etc. (depending on what p7 defaults are chosen)
-1. Have a plan for documentation changes (7.1?)
+1. Make and execute a plan for documentation changes (7.1?)
 
 # FAQ
 
