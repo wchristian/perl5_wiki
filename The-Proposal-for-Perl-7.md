@@ -22,17 +22,6 @@ Perl 5 operates mostly on a [semantic versioning system](https://semver.org/) wi
 
 7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed.
 
-
-# CPAN compatibility with Perl 7
-
-A module called `Module::Compatibility` is being worked on right now. It will be invoked by CPAN clients but potentially other code. It will do the following like the following, although the specifics may change:
-
-1. Walk a directory tree and find any perl modules or perl scripts. As the first line (after the BOM and `#!`), ```use compat::perl5``` will be inserted.
-    * Some string in the perl code or possibly `META.yml` can be used to prevent compat::perl5 from being inserted into it.
-2. Find any C or XS code and correct `#if` logic which assumes the major version is Perl 5.
-
-Once this code is run, we believe that all CPAN modules can install on Perl 7 without an issue. This is not necessarily how the migration from 7 to 8 will go. But it provides a quick win and overcomes the major blocker to making it to Perl 7.
-
 # Dual Life modules
 
 One of the goals of 7.0 will be to eat our own dog food. As much code as possible will be brought up to 7.0 standards to set an example of how code should be used. This also provides a platform to prove that the standards work without issue.
@@ -51,7 +40,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
 1. Fix fresh_perl issues.
 1. Fix all perl XS to support PERL_MAJOR=7
-1. Module::Compatibility
+1. [Module::Compatibility](Making-CPAN-work-on-Perl-7)
 1. Update core perl code to use v7 where no changes are required.
 1. Test Suite passing
 1. Test Perl 7 against CPAN via Module::Compatibility
