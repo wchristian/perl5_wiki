@@ -2,6 +2,39 @@
 
 All parsed code must begin with use vX; It is a directive to the interpreter which tells it how to parse the following code.
 
+## bdf
+
+To specify the Perl 7 protocol, you specify the `v7` protocol:
+
+```perl
+use v7;
+```
+
+To fall back to Perl 5.8, specify `v5`:
+
+```perl
+use v5;
+```
+
+You can get the preview version of the next major version
+
+```perl
+use v8;
+```
+
+Perl 7 will honor `use v5.32` under `v5` code not not in 7 or later.
+
+You can still turn off defaults in all protocols by doing:
+
+```perl
+no strict;
+no warnings;
+...
+```
+    
+Don't rely on these as a crutch though. If you want to stick to Perl 5 behavior, you can still use Perl 5.
+
+
 # Allowed ways to specify the protocol
 
 The following pragmas are required by perl 7 before any code is allowed to be parsed. Comments and whitespace are permissible. -x applies.
@@ -112,3 +145,7 @@ sub import {
 
 1;
 ```
+
+
+
+
