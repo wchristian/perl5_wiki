@@ -2,7 +2,7 @@
 
 All parsed code must begin with use vX; It is a directive to the interpreter which tells it how to parse the following code.
 
-## bdf
+# Allowed ways to specify the protocol
 
 To specify the Perl 7 protocol, you specify the `v7` protocol:
 
@@ -25,7 +25,7 @@ use v8;
 We are still discussing the possibility of providing a pragma `current` which will set the defaults to the major version of the installed Perl. Both the name and the behavior are continuing to be discussed.
 
 ```perl
-use current;
+use current; # Tell the parser to use the major of the current binary. 
 ```
 
 # Manipulating the defaults once they are set
@@ -41,19 +41,6 @@ no warnings;
 ```
     
 Don't rely on these as a crutch though. If you want to stick to Perl 5 behavior, you can still use Perl 5.
-
-
-# Allowed ways to specify the protocol
-
-The following pragmas are required by perl 7 before any code is allowed to be parsed. Comments and whitespace are permissible. -x applies.
-
-```perl
-use v5;
-use v7;
-
-# This is a placeholder. Open for bikeshed.
-use current; # Tell the parser to use the major of the current binary. 
-```
 
 # Backward compatibility with Perl 5
 
