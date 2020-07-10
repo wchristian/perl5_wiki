@@ -17,10 +17,14 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 1. Agree on the [new defaults for Perl 7](Defaults-for-v7).
 1. Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
 1. Agree on [how -e and -E will work](How--e-works-in-7) (-5 by default)
-1. Add use v5 to all perl code in blead.
+1. Prepare blead to work with the required protocol declarations
+    1. Add use v5 to all perl code in blead.
+    1. Address fresh_perl issues in 7. Ideally by injecting use v5 in them.
+1. Prepare for Perl 7 XS
+    1. Provide a macro to compare major and minor versions, not just minor versions.
+    1. Update [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to support the new XS macro in prior versions of Perl.
+    1. Fix all blead XS to support `PERL_MAJOR=7`
 1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
-1. Address fresh_perl issues in 7. Ideally by injecting use v5 in them.
-1. Fix all blead XS to support `PERL_MAJOR=7`
 1. [Module::Compatibility](Making-CPAN-work-on-Perl-7)
 1. Update core perl code to use v7 where no changes are required.
 1. Update cpan clients and EUMM/M::B to work with Perl 7
