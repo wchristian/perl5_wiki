@@ -34,44 +34,24 @@ We could have done many things, but we had to choose one of them. Perl 7 is what
 
 * enable strict by default
 * enable warnings by default
-* disable bareword filehandles
-* disable multidimensional array emulation (a Perl 4 trick)
 * enable subroutine signatures
-* change prototypes to use the `:prototype` attribute
+* disable [Indirect Object Syntax](https://metacpan.org/pod/perlobj#Indirect-Object-Syntax)
 
 ## When will this happen?
 
-In his announcement at The Perl Conference in the Cloud, Sawyer X (Perl Project Lead) said they'd like to have it within a year, but maybe sooner than that.
+We'd like to be done in less than a year. Ideally sooner. 
 
 ## How can I help?
 
-There's a [core-p7](https://github.com/Perl/perl5/tree/core-p7) branch in the [Perl repo on GitHub](https://github.com/Perl/perl5). Look for the [known-issues.md](https://github.com/Perl/perl5/blob/core-p7/known-issues.md) for things that need attention.
+Right now we're early in planning. The details as we understand them can be [found here](The-Proposal-for-Perl-7).
 
 ## Will Perl 7 run my Perl 5 code?
 
-Most likely it will. Perl 7 is Perl 5.32 with different defaults. If your code can run under v5.32, you are probably close to ready. Note that in the past several years, Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you need to fix that. Trying your code under v5.32 will find those problems for you.
+The current plan is that Perl 7 will require a [Protocol Declaration](Perl-Protocol-Declaration) at the head of each file. We are working on a module that [will convert](Making-CPAN-work-on-Perl-7) CPAN modules during installation or source trees.
 
-There will be some compatibility modes—[see Sawyer's announcement from July 3](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html). The `use VERSION` is going to change behavior to specify major version "protocol" instead of minimum versions and feature bundles. This is a required declaration. To specify the Perl 7 protocol, you specify the `v7` protocol:
+If your code can run under Perl 5.32, you should be able to run it under perl 7. Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you may need to fix that. Trying your code under v5.32 will find those problems for you.
 
-    use v7;
-
-To fall back to Perl 5.32, specify `v5`:
-
-    use v5;
-
-You can get the preview version of the next major version
-
-    use v8;
-
-There's no word on Perl 7 recognizing `use v5.32` in Perl 5 code.
-
-But, since Perl 7 is v5.32, you already know how to turn off defaults you don't like:
-
-    no strict;
-    
-    { no warnings; ... }
-    
-Don't rely on these as a crutch though. If you want to stick to Perl 5 behavior, you can still use Perl 5.
+There will be some compatibility modes—[see Sawyer's announcement from July 3](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html). The `use VERSION` is going to change behavior to specify major version "protocol" instead of minimum versions and feature bundles. This is a required declaration. 
 
 ## What happens to Perl 5?
 
@@ -81,17 +61,13 @@ The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guar
 
 ## What will _/usr/bin/perl_ be?
 
-We don't know the answer to this one yet. _/usr/bin/perl_ is the system Perl. For at least a decade, I have been telling people not to use the system `perl` for user code.  This is the `perl` that the system employs to handle system Perl programs. Each system will choose what they need, and it's likely they will stick with Perl 5 since everything using it will not have tested against or migrated to Perl 7 (because it doesn't exist yet). We are working with major packagers to figure out what works best for them. On my macOS box, that's v5.18 (and soon [won't be there at all](https://developer.apple.com/documentation/macos_release_notes/macos_10_15_beta_release_notes)), but they are also taking it away. 
+Distros control what `/usr/bin/perl` is, not Perl development. We can provide a suggestion or guidance, especially in `Configure`. Even so, we feel this should be a late decision in the process and advice from distros will be sought even before we do this. 
 
-Relying on the system means you let someone else make the decision for you, and it's a bigger problem than migrating to Perl 7, or even Perl at all. Let's say that your system provides an out-of-date `perl`, which is not uncommon. Then you update to v5.26. Now your regexes break because you have an [unescaped left brace](https://www.effectiveperlprogramming.com/2017/04/you-must-escape-the-left-brace-in-a-regex/). Since you didn't control a key aspect of your user application, you didn't control the system's decision to break your code. People often find these issues after a system upgrade (planned or otherwise). 
-
-Having said that, my guess is that we'll have something close to the Python situation, where there's `python`, `python2`, and `python3`. So, we'd have `perl` (whatever the system needs, likely the same thing they are using now), `perl5` (a symlink to `perl`), and `perl7` (A different binary). That's just my guess based on how I've seen these things work elsewhere.
-
-The Perl module paths are already set up for this too. We can put the version right in the `@INC` paths so two different versions can install modules into the same prefix (say, `/usr/lib/perl`) without conflicting with each other. Or they could simply use different prefixes.
-
-As the user, your decision is likely made for you. If you aren't going to install your own `perl` for your application, you're stuck on whatever the system provides. If you do install your own `perl`, you get to decide how that happens.
+As the user, your decision is likely made for you. If you aren't going to install your own `perl` for your application, you're stuck on whatever the system provides. If you do install your own `perl`, you will get to decide how that happens.
 
 ## What happens if Perl 7 doesn't happen?
+
+We are endeavoring to make [the scope of the bump to 7.0.0](The-Proposal-for-Perl-7#what-we-need-to-do-before-perl-7) as small as possible to make sure it does happen. 
 
 That's the gorilla-elephant hybrid in the room, isn't it? We did this once in 2000, didn't we? Perl 6 didn't turn out how we thought it would, but that's life sometimes.
 
