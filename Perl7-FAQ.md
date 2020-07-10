@@ -59,7 +59,7 @@ Perl 5 goes into long term maintenance. That can be as long as a decade or more.
 
 The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guarantees support for the previous two maintenance releases. With a new maintenance release every year, this effectively means two years of support for a major release (such as v5.30 and v5.32).
 
-## What will _/usr/bin/perl_ be?
+## What will `/usr/bin/perl` be?
 
 Distros control what `/usr/bin/perl` is, not Perl development. We can provide a suggestion or guidance, especially in `Configure`. Even so, we feel this should be a late decision in the process and advice from distros will be sought even before we do this. 
 
@@ -69,36 +69,21 @@ As the user, your decision is likely made for you. If you aren't going to instal
 
 We are endeavoring to make [the scope of the bump to 7.0.0](The-Proposal-for-Perl-7#what-we-need-to-do-before-perl-7) as small as possible to make sure it does happen. 
 
-That's the gorilla-elephant hybrid in the room, isn't it? We did this once in 2000, didn't we? Perl 6 didn't turn out how we thought it would, but that's life sometimes.
-
 If Perl 7 doesn't happen, we get Perl v5.34 and keep doing that.
 
-But, it's very unlikely that we'll fail here. Perl 7 is v5.32. We already have all of the code, but it needs some clean-ups. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release (I know, I get the emails about my modules being broken). Perl 7 is more about process adjustment than new code.
+We already have all of the code, there are simply some details to work out. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release. Perl 7 is more about process adjustment than new code. Hopefully this will also shake out any issues so make future major version bumps easier to deal with.
 
-And, consider this: Perl finally moved to GitHub. It converted all of its reports in Request Tracker to GitHub issues. You can now interact with the [perl5 repo on GitHub](https://github.com/Perl/perl5). That was a huge project, and it's the same people that made it happen.
-
-Honestly, Perl 6 was announced without a plan. I was there (in the room) when we decided to invent it. Larry Wall announced the new direction that week with no plan, and called it "the community's rewrite of Perl". A long RFC process followed, which [Mark Jason Dominus summarized for Perl.com](https://www.perl.com/pub/2000/11/perl6rfc.html/).
-
-This is different. Key people have been planning this for a year. They've carefully considered how big a bite they can take, and have a modest plan going into the next year. The code is already all there.
-
-## What happens to filehandles if indirect object notation disappears?
-
-Some people realize that `print` and friends can be methods on the filehandle. Have you ever considered why there's no comma after the filehandle?
-
-    print STDOUT "Hello world!\n";
-    STDOUT->print( "Hello world!\n" );
-    
-So far, filehandles seem to be safe under `no feature qw(indirect)`.
+We have been planning this for a year. We've been carefully considering how big a bite we can take. It is our goal to have as modest plan as possible in order to ensure success.
 
 ## Will feature X be included?
 
 Perl 7 is v5.32 with different defaults. You won't see new features and you won't have any taken away from you if you're running on v5.32. If it's already in Perl, you can have it. If it isn't, probably not.
 
-There are many things that people want, and I expect that Perl 8 will be the version that handles that. Perl 7 sets the stage for completely breaking with Perl 5 compatibility, but Perl 8 will be the major version that can actually do it.
+There are many things that people want, a significant amount of excitement is already happening around features we want to see in 7.2. Once that is out, you will already be able to use it by declaring `use v8` in your code.
 
 ## Will Perl 7 have a new object system?
 
-There's the possibility of a new object system. Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor). But, by "new", we really often mean syntactic sugar over what is already in the codebase. Since Perl 7 is compatible with v5.32, you aren't going to lose the way that Perl does it now.
+Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor). It will go into Perl when and if it is ready. Until it is merged to blead, no promises will be made. It is important we not cause the progress of the Perl language to stall waiting on any one thing that may never come.
 
 ## Will UTF-8 features be on by default?
 
@@ -113,16 +98,6 @@ Perl 6 started as an ambitious effort to completely rewrite Perl. For various re
 ## So when's Perl 8 coming out?
 
 One major version at a time! Let's figure out Perl 7 first.
-
-## What about the other forks of Perl?
-
-Will Braswell does an amazing job of outlining the paths of various offshoots of Perl in his talk [The Perl Family Tree](https://vimeo.com/394230613).
-
-Perl 6 happened, then struck out on its own as Raku.
-
-The community has talked about a Perl 7 since at least 2013. One brave soul even made a [toy project on GitHub](https://www.github.com/perl7), but that was never a serious attempt. It would have been based on NQP (Not Quite Perl), which would have made it compilable to MOAR, the engine that powers Raku.
-
-Similarly, there was a thing called [Perl 11](http://perl11.org), which was more an umbrella for a design philosophy behind several exploratory forks of Perl. These sort of projects let people try heterodox ideas, and that's fine. They just aren't `perl`.
 
 ## How can I find out more about Perl 7?
 
