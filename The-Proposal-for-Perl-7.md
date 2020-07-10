@@ -29,13 +29,15 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     1. Test Perl 7 against CPAN via Module::Compatibility
 1. RELEASE 7.0.0
 
-# Once Perl 7.0.0 is released.
+# After Perl 7.0.0 is released
+
+## Immediate Changes
 
 1. Merge v5.32.0..blead7 commits into blead.
 1. Bump blead to 7.1.0 and release it
 1. Bump blead to 7.1.1
 
-## There are several options we can pursue once blead is on 7.1
+## Next steps in 7.1
 
 1. Review and update code in blead to convert `use v5` code to `use v7`
     1. Review modules in `cpan/` and address orphaned code where necessary.
