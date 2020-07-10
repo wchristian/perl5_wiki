@@ -22,14 +22,6 @@ Perl 5 operates mostly on a [semantic versioning system](https://semver.org/) wi
 
 7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed.
 
-# Dual Life modules
-
-One of the goals of 7.0 will be to eat our own dog food. As much code as possible will be brought up to 7.0 standards to set an example of how code should be used. This also provides a platform to prove that the standards work without issue.
-
-Some dual life modules may present a challenge using 7.0. In some cases, it may be necessary to turn off some features temporarily until a better fix can be found. As an example, prototypes are only compatible with subroutine signatures as of Perl 5.20.0. So Test::Simple would either have to stop using prototypes or have `use if $] < 5.20 no feature 'signatures';` in its code. 
-
-As part of the research for this project we have reached out to some authors and found some of the CPAN maintained dual life modules to be unmaintained. On a case by case basis, it may be wise to move the modules from cpan/ to dist/ in order to provide better maintenance.
-
 # Requirements for shipping Perl 7
 
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
