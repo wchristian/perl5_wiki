@@ -39,7 +39,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 1. Add use v5 to all perl code
 1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
 1. Fix fresh_perl issues.
-1. Fix all perl XS to support PERL_MAJOR=7
+1. Fix all blead XS to support `PERL_MAJOR=7`
 1. [Module::Compatibility](Making-CPAN-work-on-Perl-7)
 1. Update core perl code to use v7 where no changes are required.
 1. Test Suite passing
