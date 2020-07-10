@@ -8,15 +8,7 @@ brian's [perl7faq](https://github.com/briandfoy/perl7faq/blob/master/README.md).
 
 # Intro
 
-7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed.
-
-# Perl Versioning
-
-Perl 5 operates mostly on a [semantic versioning system](https://semver.org/) with the exception that development versions will have an odd numbered minor version
-
-1. MAJOR version when you make incompatible API changes,
-1. MINOR version when you add functionality in a backwards compatible manner, and
-1. PATCH version when you make backwards compatible bug fixes.
+7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed. Versioning will proceed according to the existing versioning plan.
 
 # What we need to do before Perl 7
 
@@ -73,4 +65,3 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 **A:** 
 
 ---
-
