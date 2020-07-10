@@ -35,6 +35,7 @@ As part of the research for this project we have reached out to some authors and
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
 
 1. Agree on the [new defaults for Perl 7](Defaults-for-v7).
+1. Update pod/ policy documents to state how development has changed.
 1. Agree on how -e and -E will work (-5 by default)
 1. Add use v5 to all perl code
 1. Change perl to [require v5/v7 protocol specification](Perl-Protocol-Declaration)
@@ -42,10 +43,11 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 1. Fix all blead XS to support `PERL_MAJOR=7`
 1. [Module::Compatibility](Making-CPAN-work-on-Perl-7)
 1. Update core perl code to use v7 where no changes are required.
-1. Test Suite passing
-1. Test Perl 7 against CPAN via Module::Compatibility
-1. Update cpan clients to work with Perl 7
-1. Update pod/ policy documents to state how development has changed.
+1. Update cpan clients and EUMM/M::B to work with Perl 7
+1. Testing
+    1. Test Suite passing
+    1. Test Perl 7 against CPAN via Module::Compatibility
+1. RELEASE 7.0.0
 
 # Optional items for Perl 7.
 
