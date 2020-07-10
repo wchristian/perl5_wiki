@@ -33,9 +33,9 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 
 ## Immediate Changes
 
-1. Merge v5.32.0..blead7 commits into blead which has had ongoing development during this time.
-1. Bump blead to 7.1.0 and release it
-1. Bump blead to 7.1.1
+1. Merge `v5.32.0..blead7` commits into blead which has had ongoing development during this time.
+1. Bump blead to `7.1.0` and release it
+1. Bump blead to `7.1.1`
 
 ## Next steps in 7.1
 
