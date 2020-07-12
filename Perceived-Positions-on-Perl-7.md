@@ -1,12 +1,13 @@
 This document attempts to summarize where everyone is at in their preferred plan for Perl 7. If you are mentioned here and do not agree, please reach out to us or edit the document. Parsing everyone's changing opinions over time on multiple mediums is very difficult to do accurately.
 
 
-### No information:  Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Christiomos, Zefram
+No information:  Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Christiomos, Zefram
+- We don't know where these people stand because they have not responded in any known forum.
 
-### Tony Cook, Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden
+Tony Cook, Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden
 - Whatever Sawyer decides.
 
-### Nico, Jim, Sawyer, Todd, Tux, cPanel, Hugo, Ovid
+[Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Hugo, Ovid
 - perl 7 defaults to v7 behaviors
 - use v7 is implied.
 - use compat::p5 at the top of files runs all old perl 5 code as normal
