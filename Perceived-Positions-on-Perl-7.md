@@ -4,10 +4,10 @@ This document attempts to summarize where everyone is at in their preferred plan
 No information:  Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Christiomos, Zefram
 - We don't know where these people stand because they have not responded in any known forum.
 
-Tony Cook, Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden
+Tony Cook, Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 - Whatever Sawyer decides.
 
-[Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Hugo, Ovid
+[Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid
 - perl 7 defaults to v7 behaviors
 - use v7 is implied.
 - use compat::p5 at the top of files runs all old perl 5 code as normal
