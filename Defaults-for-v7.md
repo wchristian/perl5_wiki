@@ -21,7 +21,6 @@
 1. feature say
 1. feature signatures
 1. feature state
-1. feature unicode_eval
 1. no feature indirect
 
 ## Not to be included
