@@ -21,7 +21,7 @@ Paul
 - Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
 - Code still using the older `package` to be considered legacy v5 and will one day be removed
 
-Leon, Karen, Toolchain, Dave M
+Leon, Karen, Dave M
 - use v5 is implied potentially for 5-10 years.
 - No old code breaks
 - /usr/bin/perl can point to perl7
