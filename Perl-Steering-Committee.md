@@ -36,7 +36,7 @@ Ways someone might exit the group:
 - Default expiry one year for inactivity
 - Vote out
 
-# Member resposbilities:
+# Member responsibilities:
 
 The primary purpose of members is to: Work out the 'how' together
     - Design & technology authority
