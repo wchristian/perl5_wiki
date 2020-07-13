@@ -13,9 +13,12 @@ Tony Cook, Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams
 - use compat::p5 at the top of files runs all old perl 5 code as normal
 - distros will likely have /usr/bin/perl5 and /usr/bin/perl7
 
-Karl, Paul
+Karl
 - use v5 is implied for 7.0.0 in ~45 days
 - require both v5/v7 for perl 7.2.0 June 2021
+
+Paul
+- Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
 
 Leon, Karen, Toolchain, Dave M
 - use v5 is implied potentially for 5-10 years.
