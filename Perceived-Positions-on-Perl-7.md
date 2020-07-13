@@ -22,10 +22,10 @@ Paul
 - Code still using the older `package` to be considered legacy v5 and will one day be removed
 
 Leon, Karen, Dave M
-- use v5 is implied potentially for 5-10 years.
-- No old code breaks
-- /usr/bin/perl can point to perl7
-- New users will have no intuitive way to know that you need to 'use v7' to get the 7 you're running on.
+- No widespread breakage of the perl ecosystem
+- **No fork between perl5 and perl7 community and ecosystem**
+- Only one /usr/bin/perl
+- perl7 will use perl5 defaults, explicit use v7 for greater messaging and usage of new features
 
 PPI folks, Editor Parsers, display parsers (github)
 - use v5/v7 required.
