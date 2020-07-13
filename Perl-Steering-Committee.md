@@ -38,8 +38,9 @@ Ways someone might exit the group:
 
 # Member responsibilities:
 
-The primary purpose of members is to: Work out the 'how' together
-    - Design & technology authority
+The primary purpose of members is to: 
+- Work out the 'how' together
+- Design & technology authority
 
 Other responsibilities
 - Public support of the group and members
