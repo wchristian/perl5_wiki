@@ -17,7 +17,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     - Determine how to put perl 7 into perl 5 mode
     - Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
     - Agree on [how -e and -E will work](How-dash-e-works-in-7)
-    - Determine what 'use v7' will do.
+    - Determine what `use v7` will do.
 1. [Fix Perl 7 version checks in XS](https://github.com/Perl/perl5/wiki/Perl-7,-XS-and-Devel::PPPort)
 1. Prepare blead to work with the required protocol declarations
     1. Add `use v5` to all perl code in blead.
