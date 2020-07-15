@@ -1,6 +1,8 @@
 # Intro
 
-The following defaults have been proposed for Perl 7. They were chosen because the belief is that they would break very little well behaved code.
+The following defaults have been proposed for Perl 7. They were chosen because the belief is that they would break very little well behaved code. 
+
+One or more audits of these defaults against CPAN should be attempted in order to understand how much of it would break if we chose this.
 
 # On by default
 
