@@ -85,31 +85,64 @@ The check above could then become
 
 Note that IMO, this is cleaner, easier to read and probably reduces mistakes...
 
-## Impact on CPAN
+# Impact on CPAN
+
+## Protections in `ppport.h`
+
+The second issue we are facing comes from an internal protection in `ppport.h` itself which breaks if `PERL_REVISION` is not 5. Over 1017 XS modules on CPAN include a `ppport.h` that needs to be updated and a re-released to CPAN.
+
+For example `Class-XSAccessor-1.19` comes with [ppport.h](https://metacpan.org/source/SMUELLER/Class-XSAccessor-1.19/ppport.h) 
+This has been fixed by Karl via [this commit](https://github.com/Dual-Life/Devel-PPPort/commit/293861b9234e45fb1a3018959caaab2086bc6fbd).
+
+The main issue was coming from the check in [parts/inc/version](https://github.com/Dual-Life/Devel-PPPort/blob/v3.58/parts/inc/version#L49)
+```c
+/* It is very unlikely that anyone will try to use this with Perl 6
+   (or greater), but who knows.
+ */
+#if PERL_REVISION != 5
+#  error ppport.h only works with Perl version 5
+#endif /* PERL_REVISION != 5 */
+```
+
+### Questions / Exploring Solutions
+
+1. Why does `ppport.h` need to be shipped with each CPAN distro?
+    - This is similar mistake we made with [Module::Install](https://rt.cpan.org/Public/Bug/Display.html?id=118958)
+2. Devel-PPPort could start shipping `ppport.h` in a shared_lib directory which could then be consumed by other modules
+3. Should toolchain patch CPAN installs automatically update `ppport.h` when detecting a dated copy of the header file?
+    - Is patching all of CPAN the only way?
+1. What other solutions can we consider to try to solve that problem?
+
+## Incomplete PERL_REVISION checks
 
 Many XS modules (152 on CPAN) are using `#if PERL_VERSION` Most do not check for `PERL_REVISION` correctly.
-We can explore multiple solutions to fix them when bumping Perl to 7.
 
-1. provide the compare macros via Devel::PPPort - (view work from Karl)[https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1]
-1. patch Perl core itself rather than patching all modules
+There are several ways we have thought of already to fix this problem. There may be more:
 
-### Add the compare macros to Devel::PPPort 
+1. Provide the compare macros (`PERL_VERSION_GT(5,21,2`) via Devel::PPPort - (view work from Karl)[https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1]
+1. Patch Perl core itself rather than patching all modules
 
-I think adding the compare macros to Devel::PPPort is a good think and should be done and released.
-Karl already worked on providing such macros:
+### Compare macros
+
+Karl has already worked on providing these macros:
 - [Karl's work](https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1)
 - [doc](https://github.com/Dual-Life/Devel-PPPort/commit/a15c0190a80c319517b97564e436922e664eb3c1)
 
-My understanding is these macros are going to be added to CORE in the next development cycle.
+These macros will also be added to CORE in the next development cycle.
 
-I think we should consider patching all, if not most, of popular modules (high in the CPAN river or dual life) to enforce the usage of these new macros. We should also consider add a documentation section for XS to recommend using these macros.
+I think we should consider patching all, if not most, of popular modules (high in the CPAN river or dual life) to enforce the usage of these new macros.
 
-One minor issue to consider: conflicting redefined macros if they are not protected with `#ifundef`.
+We should also [add a documentation section for XS](https://github.com/Perl/perl5/tree/blead/pod) to recommend using these macros.
 
-Are we considering adding and using these macros to be the only solution?
-If so any xs modules on CPAN (or outside) using `PERL_VERSION` without `PERL_REVISION` is going to be broken.
+Conflicting redefined macros may be a problem. Example: [verion.pm defines PERL_VERSION_LT](https://metacpan.org/source/JPEACOCK/version-0.9924/vutil/vutil.h#L81)
 
-### Can we patch Perl itself?
+This solution only fixes the issue if authors update the `ppport.h` they ship with their module.
+
+I think adding the compare macros to Devel::PPPort is a good thing and should be done and released.
+
+### Patch Perl itself
+
+Patching CPAN is hard. We are still working on fixing modules on CPAN which assume `.` is in `@INC`. 3 years later, 5000 modules on CPAN make incorrect use of Module::Install and are broken for the basic use case of `perl Makefile.PL; make install`
 
 This is exploring the idea that it would be much harder to patch the whole CPAN (and world) rather than fixing Perl internals during the next development cycle.
 
@@ -138,33 +171,5 @@ Suggestion make the `PERL_VERSION` bump from 32 to 7000 (for example), and adjus
 
 With such a solution, I expect that it would not be mandatory (even if recommeneded) to patch all the XS distribution out in the world.
 
-### Exploring other ideas?
 
-.... 
-
-# Protections in `ppport.h`
-
-The second issue we are facing comes from an internal protection in `ppport.h` itself which breaks if `PERL_REVISION` is not 5. Over 1017 XS modules on CPAN include a `ppport.h` that needs to be updated and a re-released to CPAN.
-
-For example `Class-XSAccessor-1.19` comes with [ppport.h](https://metacpan.org/source/SMUELLER/Class-XSAccessor-1.19/ppport.h) 
-This has been fixed by Karl via [this commit](https://github.com/Dual-Life/Devel-PPPort/commit/293861b9234e45fb1a3018959caaab2086bc6fbd).
-
-The main issue was coming from the check in [parts/inc/version](https://github.com/Dual-Life/Devel-PPPort/blob/v3.58/parts/inc/version#L49)
-```c
-/* It is very unlikely that anyone will try to use this with Perl 6
-   (or greater), but who knows.
- */
-#if PERL_REVISION != 5
-#  error ppport.h only works with Perl version 5
-#endif /* PERL_REVISION != 5 */
-```
-
-## Questions / Exploring Solutions
-
-1. Why does `ppport.h` need to be shipped with each CPAN distro?
-    - This is similar mistake we made with [Module::Install](https://rt.cpan.org/Public/Bug/Display.html?id=118958)
-2. Devel-PPPort could start shipping `ppport.h` in a shared_lib directory which could then be consumed by other modules
-3. Should toolchain patch CPAN installs automatically update `ppport.h` when detecting a dated copy of the header file?
-    - Is patching all of CPAN the only way?
-1. What other solutions can we consider to try to solve that problem?
 
