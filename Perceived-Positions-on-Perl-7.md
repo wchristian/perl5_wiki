@@ -4,16 +4,16 @@ This document attempts to summarize where everyone is at in their preferred plan
 No information:  Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Christiomos, Zefram
 - We don't know where these people stand because they have not responded in any known forum.
 
-Tony Cook, Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
+Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 - Whatever Sawyer decides.
 
-[Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid
+[Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
 - perl 7 defaults to v7 behaviors
 - use v7 is implied.
 - use compat::p5 at the top of files runs all old perl 5 code as normal
 - distros will likely have /usr/bin/perl5 and /usr/bin/perl7
 
-Karl
+Tony
 - use v5 is implied for 7.0.0 in ~45 days
 - require both v5/v7 for perl 7.2.0 June 2021
 
