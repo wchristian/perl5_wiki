@@ -1,12 +1,5 @@
 # What should perl 7 defaults be?
 
-## Features not experimental anymore
-1. `current_sub`
-1. `postderef`
-1. `postderef_qq`
-1. `signatures`
-1. `lexical_sub`
-
 ## On by default
 
 1. `use strict;`
@@ -32,6 +25,13 @@ print "$inner{thing}"
 4. `feature current_sub`
    - Technically this is a keyword `__SUB__()` -- Sawyer
     
+## Features not experimental anymore
+1. `current_sub`
+1. `postderef`
+1. `postderef_qq`
+1. `signatures`
+1. `lexical_sub`
+
 ## Not to be included
 
 1. `use re 'strict'`
