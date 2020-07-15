@@ -40,10 +40,11 @@ Paul
 - Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
 - Code still using the older `package` to be considered legacy v5 and will one day be removed
 
-## Defaults do not change
+## v5 implied until vX is seen
 
 Leon, Karen, Dave M
 
+- Defaults do not change
 - No widespread breakage of the perl ecosystem
 - **No fork between perl5 and perl7 community and ecosystem**
 - Only one /usr/bin/perl
