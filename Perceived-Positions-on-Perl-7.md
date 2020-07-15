@@ -1,5 +1,6 @@
-This document attempts to summarize where everyone is at in their preferred plan for Perl 7. If you are mentioned here and do not agree, please reach out to us or edit the document. Parsing everyone's changing opinions over time on multiple mediums is very difficult to do accurately.
+# Intro
 
+This document attempts to summarize where everyone is at in their preferred plan for Perl 7. If you are mentioned here and do not agree, please reach out to us or edit the document. Parsing everyone's changing opinions over time on multiple mediums is very difficult to do accurately.
 
 ## No information:  Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Christiomos, Zefram
 - We don't know where these people stand because they have not responded in any known forum.
@@ -8,10 +9,12 @@ This document attempts to summarize where everyone is at in their preferred plan
 - Whatever Sawyer decides.
 
 ## [Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
-- perl 7 defaults to v7 behaviors
-- use v7 is implied.
+- perl 7 defaults to [v7 behaviors](Defaults-for-v7) when code is first parsed.
+- Perl 7 does not break well behaved code.
 - use compat::p5 at the top of files runs all old perl 5 code as normal
-- distros will likely have /usr/bin/perl5 and /usr/bin/perl7
+- distros May have `/usr/bin/perl5` and `/usr/bin/perl7`
+    - This is ok. They're used to that.
+    - 
 
 ## Tony
 - use v5 is implied for 7.0.0 in ~45 days
