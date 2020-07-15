@@ -13,7 +13,7 @@ One or more audits of these defaults against CPAN should be attempted in order t
 my \$x = \$y;
 my \%hash = $hashref;  $hash{key} eq $hashref->{key}
 foreach my \%inner (@list_of_hashrefs) {
-print "$inner{thing}"
+  print "$inner{thing}"
 }
 ```
 
@@ -58,6 +58,6 @@ print "$inner{thing}"
     - Poor compatibiltiy with old prototypes.
 10. `use utf8` (`$^H |= 0x00800000;`)
     - This setting is currently well known to be very disruptive to several major code bases.
-11. `feature switch
+11. `feature switch`
     - In its current state we are very unhappy with it.
 12. `unicode_strings` / `unicode_eval`
