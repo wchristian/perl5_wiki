@@ -6,14 +6,14 @@ At this time we have no informationon where these people stand because they have
 
 Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram
 
-## In Perl 7 the defaults for `$^H`, `%{^H}, and `${^WARNINGS},` change
+## In Perl 7 the defaults change
 
 
 Pro: [Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
 
 Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 
-- Perl 7 defaults to [v7 behaviors](Defaults-for-v7) when code is first parsed.
+- Perl 7 defaults to [Perl 7 behaviors](Defaults-for-v7) when code is first parsed.
 - Perl 7 does not break well behaved code.
     - Most code on CPAN will install and function.
     - All critical code on CPAN will  install and function with minor patches that are both compatible with 5 and 7.
