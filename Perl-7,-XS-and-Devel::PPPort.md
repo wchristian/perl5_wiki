@@ -161,9 +161,17 @@ The following approach would allow any existing XS code to warn but continue to 
 1. Replace these constants in core with something else: `__PERL_CORE_MAJOR`, `__PERL_CORE_MINOR`, `__PERL_CORE_RELEASE`
     - Discourage their use outside of core.
 1. Encourage the usage of `PERL_VERSION_GT` macros instead.
+1. Patch Devel::PPPort to use `PERL_VERSION_LE` macros instead of VERSION checks on perl 7 and above
 
 If we choose this plan, I would also like to discuss how the `#define` will work for `__PERL_CORE_MAJOR`. I think they should be inline functions which extract from a single source of knowledge (`__PERL_CORE_VERSION=7.3.8`) instead of integers.
 
-
+ppport.h would do something like this:
+```c
+#ifndef PERL_VERSION_DEPRECATED <--- we're on 5
+# define GT macros.
+#else
+... Do nothing
+#endif
+```
 
 
