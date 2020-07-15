@@ -27,7 +27,7 @@ Ok with Sawyer's decision: Yves Orton, Stevan Little, John Lightsey, Chris Willi
 
 ## v5 implied a year then v5/v7 required in all code.
 
-Tony, PPI folks, Editor Parsers, display parsers (github)
+Tony, PPI folks
 
 - use v5 is implied for 7.0.0 in ~45 days
 - require both v5/v7 for perl 7.2.0 June 2021
