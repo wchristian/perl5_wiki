@@ -140,7 +140,7 @@ This solution only fixes the issue if authors update the `ppport.h` they ship wi
 
 I think adding the compare macros to Devel::PPPort is a good thing and should be done and released.
 
-### Patch Perl itself
+### Patch Perl 7
 
 Patching CPAN is hard. We are still working on fixing modules on CPAN which assume `.` is in `@INC`. 3 years later, 5000 modules on CPAN make incorrect use of Module::Install and are broken for the basic use case of `perl Makefile.PL; make install`
 
