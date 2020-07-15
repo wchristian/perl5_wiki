@@ -10,12 +10,15 @@ Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram
 
 
 Pro: [Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
+
 Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 
-- perl 7 defaults to [v7 behaviors](Defaults-for-v7) when code is first parsed.
+- Perl 7 defaults to [v7 behaviors](Defaults-for-v7) when code is first parsed.
 - Perl 7 does not break well behaved code.
     - Most code on CPAN will install and function.
     - All critical code on CPAN will  install and function with minor patches that are both compatible with 5 and 7.
+    - No widespread breakage of the perl ecosystem
+    - No fork between perl5 and perl7 community and ecosystem
 - A means to get some of the older semantics on demand will exist
      - use compat::p5 switches the parser to parse code exactly like it would have in perl 5.32.0
 - Perl 5 goes into maintenance mode. There is no fork.
