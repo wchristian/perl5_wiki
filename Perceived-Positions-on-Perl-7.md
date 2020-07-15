@@ -14,10 +14,13 @@ Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey
 
 - perl 7 defaults to [v7 behaviors](Defaults-for-v7) when code is first parsed.
 - Perl 7 does not break well behaved code.
-- use compat::p5 switches the parser to parse code exactly like it would have in perl 5.32.0
+    - Most code on CPAN will install and function.
+    - All critical code on CPAN will  install and function with minor patches that are both compatible with 5 and 7.
+- A means to get some of the older semantics on demand will exist
+     - use compat::p5 switches the parser to parse code exactly like it would have in perl 5.32.0
 - Perl 5 goes into maintenance mode. There is no fork.
 - distros May have `/usr/bin/perl5` and `/usr/bin/perl7`
-    - This is ok. They're used to that.
+    - This is ok. They're used to that when transitioning to a new major version.
 
 ## Tony
 - use v5 is implied for 7.0.0 in ~45 days
