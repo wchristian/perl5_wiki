@@ -16,8 +16,7 @@ We could have done many things, but we had to choose one of them. Perl 7 is what
 
 * enable strict by default
 * enable warnings by default
-* enable subroutine signatures
-* disable [Indirect Object Syntax](https://metacpan.org/pod/perlobj#Indirect-Object-Syntax)
+* enable some keywords.
 
 ## When will this happen?
 
@@ -29,21 +28,19 @@ Right now we're early in planning. The details as we understand them can be [fou
 
 ## Will Perl 7 run my Perl 5 code?
 
-The current plan is that Perl 7 will require a [Protocol Declaration](Perl-Protocol-Declaration) at the head of each file. We are working on a module that [will convert](Making-CPAN-work-on-Perl-7) CPAN modules during installation or source trees.
-
 If your code can run under Perl 5.32, you should be able to run it under perl 7. Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you may need to fix that. Trying your code under v5.32 will find those problems for you.
 
-There will be some compatibility modes—[see Sawyer's announcement from July 3](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html). The `use VERSION` is going to change behavior to specify major version "protocol" instead of minimum versions and feature bundles. This is a required declaration. 
+There will be a compatibility mode to put code sections back into Perl 5 mode. it will possibly be something simple like `use v5` or `use compat::perl5`
 
 ## What happens to Perl 5?
 
 Perl 5 goes into long term maintenance. That can be as long as a decade or more. You'll still get important security and bug fixes, just for a little bit longer than usual.
 
-The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guarantees support for the previous two maintenance releases. With a new maintenance release every year, this effectively means two years of support for a major release (such as v5.30 and v5.32).
+The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guarantees support for the previous two maintenance releases. We intend to extend that for 5.32.0.
 
 ## What will `/usr/bin/perl` be?
 
-Distros control what `/usr/bin/perl` is, not Perl development. We can provide a suggestion or guidance, especially in `Configure`. Even so, we feel this should be a late decision in the process and advice from distros will be sought even before we do this. 
+Distros control what `/usr/bin/perl` is, not Perl development. We can provide a suggestion or guidance, especially in [Configure](https://github.com/Perl/perl5/blob/blead/Configure). Even so, we feel this should be a late decision in the process and advice from distros will be sought before we make any final decisions.
 
 As the user, your decision is likely made for you. If you aren't going to install your own `perl` for your application, you're stuck on whatever the system provides. If you do install your own `perl`, you will get to decide how that happens.
 
@@ -69,9 +66,11 @@ Many people are interested in Ovid's [Cor proposal](https://github.com/Ovid/Cor)
 
 ## Will UTF-8 features be on by default?
 
-Maybe. Let's see how much work that is. We'd all like to have this, but there's death and destruction in the wake of a big switch like that. Perl has all the features it needs to handle that, but we don't know how much of the community is ready for that.
+We don't think so. People from several major companies have already reported in that utf8 feature defaults are the most likely thing to break their code bases. We'd all like to have this, but there's death and destruction in the wake of a big switch like that. Perl has all the features it needs to handle that, but we don't know how much of the community is ready for that.
 
 But, this is not simply enabling some features. Changing the default behavior of encodings is likely to break many programs because the program itself needs to be ready for Unicode (there's a primer in an appendix to the latest [Learning Perl](https://www.learningperl.com). Tom Christiansen answered [Why does modern Perl avoid UTF-8 by default?](https://stackoverflow.com/a/6163129/2766176).
+
+We do think it is time to discuss this problem once 7.0.0 is out. Maybe there's a 3rd choice.
 
 ## What about Perl 6?
 
@@ -79,26 +78,27 @@ Perl 6 started as an ambitious effort to completely rewrite Perl. For various re
 
 ## So when's Perl 8 coming out?
 
-One major version at a time! Let's figure out Perl 7 first.
+We would like Perl 8 to happen in less than 5 years. It would have several new features enabled by default.
 
 ## What about github.com/perl/perl5 is it named wrong now?
 
 Yes it is. Github will let us rename the repo and redirects should work correctly.
 
-## What about perl 5 porters?
+## What about the perl 5 porters mailing list.
 
-We don't have an answer for this yet.
+It will soon be anachronistic to call it this. We don't have an answer for this yet.
 
-## Is the idea that major numbers will be incremented every so often, like say, the linux kernel? or do you think it will be perl7 for a long time? just asking out of curiosity
+## Is the idea that major numbers will be incremented every so often, like say, the linux kernel? or do you think it will be perl7 for a long time?
 
-Perl 8 will likely come in the next 3-5 years. We hope to have [Cor](https://github.com/Ovid/Cor/wiki) in blead by then. No specific plans are in place beyond that.
+Perl 8 will likely come in the next 3-5 years. It will bump defaults, turning on what we hope will be a better language for its users.
 
 ## How can I find out more about Perl 7?
 
 * [Getting Better, not Getting By](https://www.youtube.com/watch?v=6wPMh-3qYJM), Sawyer's keynote at The Perl Conference in the Cloud
+* [The Proposal for Perl 7](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7)
 * [Sawyer's announcement on p5p](https://www.nntp.perl.org/group/perl.perl5.porters/2020/06/msg257565.html)
-* [Sawyer's proposal for `use v7` on p5p](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html)
+
+External resourcesa.
 * [Announcing Perl 7](https://www.perl.com/article/announcing-perl-7/) on Perl.com
 * [Perl 7 tl;dr](http://blogs.perl.org/users/brian_d_foy/2020/06/the-perl-7-tldr.html)
 * [Preparing for Perl 7](https://leanpub.com/preparing_for_perl7), from [Perl School](https://perlschool.com)
-* [The Proposal for Perl 7](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7)
