@@ -1,1 +1,1 @@
-***
+https://metacpan.org/release/perl
