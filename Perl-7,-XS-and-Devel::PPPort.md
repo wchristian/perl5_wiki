@@ -32,7 +32,7 @@ The check is incomplete. It is missing a check on `PERL_REVISION`. This code ass
 
 ### Using `PERL_REVISION`
 
-An improved usage of PERL_VERSION would always check the `PERL_REVISION`
+An improved usage of `PERL_VERSION` would always check the `PERL_REVISION`
 
 ```c
 #if PERL_REVISION == 5 && ( PERL_VERSION < 13 || (PERL_VERSION == 13 && PERL_SUBVERSION < 9) )
@@ -40,10 +40,10 @@ An improved usage of PERL_VERSION would always check the `PERL_REVISION`
 #endif
 ```
 
-### Using some macro to perform the comparison
+### Using a macro to perform the comparison
 
 A much better solution would be to use some alternate macro designed for the job.
-These macros trends to be boilerplate and copy over in multiple XS files (even if not always used as shown in )
+If you look at existing XS, these macros can bee seen copied in multiple XS files.
 
 Here is a version of them using multiple flavors depending what check you need
 ```c
@@ -87,7 +87,7 @@ Note that IMO, this is cleaner, easier to read and probably reduces mistakes...
 
 ## Impact on CPAN
 
-A lot of XS modules (metrics to get gathered...) are using `PERL_VERSION` without checking for `PERL_REVISION`.
+Many XS modules (metrics to get gathered...) are using `PERL_VERSION` without checking for `PERL_REVISION`.
 We can explore multiple solutions to fix them when bumping Perl to 7.
 
 1. provide the compare macros via Devel::PPPort - (view work from Karl)[https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1]
