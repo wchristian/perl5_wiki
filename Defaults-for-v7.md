@@ -1,34 +1,62 @@
-# Initial proposal for defaults (**FOR DISCUSSION**)
+# What should perl 7 defaults be?
 
 ## Features not experimental anymore
-1. current_sub
-1. postderef
-1. postderef_qq
-1. signatures
-1. lexical_sub
+1. `current_sub`
+1. `postderef`
+1. `postderef_qq`
+1. `signatures`
+1. `lexical_sub`
 
-## To be included
-1. use strict;
-1. use warnings;
-    * Are there warnings we should turn off by default?
-1. feature bitwise
-1. feature current_sub
-1. feature declared_refs
-1. feature evalbytes
-1. feature fc
-1. feature postderef_qq
-1. feature refaliasing
-1. feature say
-1. feature signatures
-1. feature state
-1. no feature indirect
+## On by default
 
+1. `use strict;`
+1. `use warnings;`
+    - We have some anxiety about runtime warnings breaking production code.
+    - Are there warnings we should turn off by default?
+    - Only one person present felt warnings should be off in production code but also acknowledged that the preference of most was to leave it on.
+1. `feature refaliasing`
+```perl
+my \$x = \$y;
+my \%hash = $hashref;  $hash{key} eq $hashref->{key}
+foreach my \%inner (@list_of_hashrefs) {
+print "$inner{thing}"
+}
+```
+
+### New keywords on by default.
+
+1. `feature state`
+1. `feature evalbytes`
+1. `feature say`
+    - Yes there is evidence it's going to break a little bit on CPAN.
+    - This is a highly desired feature so the value outweighs the breaks.
+3. `feature fc`
+    - it's a short keyword and might conflict with subroutines.
+4. `feature current_sub`
+   - Technically this is a keyword `__SUB__()` -- Sawyer
+    
 ## Not to be included
 
-NOTE that anything not included in 7.0, should probably lead to a discussion in 7.1 about if the feature could be improved in some way to make it more generally available down the road.
-
-1. feature_switch
-1. use utf8 (`$^H |= 0x00800000;`)
-    * This setting is currently very disruptive to several major code bases.
-1. unicode_strings / bitwise / unicode_eval
-    * I would have loved to add these at 7.x but I don’t know how feasible they may be. Python has tried doing it for a good few years now with continuous difficulties. They’ve resolved to keep releasing versions of 2.x since people kept refusing to upgrade to Python 3.0. Python 2.7.18 is supposedly the final Python 2 release. In short: Subtly changing behavior of functions (which the above do) is not something to be taken lightly. We should discuss these.
+1. `use re 'strict'`
+    - Could break a big chunk of CPAN.
+    - Compile time errors?
+    - Low confidence we would have a way to test if the code would break.
+1. `feature postderef_qq`
+    - This might break existing stuff without warning. How could we determine the scope of risk?
+3. `feature declared_refs`
+    - Of the people on the call, there was confusion on this item and refaliasing.
+    - The docs seemed to be limited. We think they should be improved.
+5. `feature bitwise`
+6. `feature isa`
+    - Too new
+7. `no indirect`
+    - Too new
+    - Initial testing shows a high amount of breakage on CPAN.
+    - Should this be a warning first?
+8. `feature signatures`
+    - Poor compatibiltiy with old prototypes.
+10. `use utf8` (`$^H |= 0x00800000;`)
+    - This setting is currently well known to be very disruptive to several major code bases.
+11. `feature switch
+    - In its current state we are very unhappy with it.
+12. `unicode_strings` / `unicode_eval`
