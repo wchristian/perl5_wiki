@@ -1,3 +1,5 @@
+# NOTE: This protocol is under discussion and may not be used for Perl 7.
+
 # Intro
 
 All parsed code must begin with use vX; It is a directive to the interpreter which tells it how to parse the following code.
