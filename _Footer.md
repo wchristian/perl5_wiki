@@ -1,2 +1,2 @@
-[[The Proposal for Perl 7]]
-[[Perl Steering Committee]]
+* [[The Proposal for Perl 7]]
+* [[Perl Steering Committee]]
