@@ -78,7 +78,7 @@ Perl 6 started as an ambitious effort to completely rewrite Perl. For various re
 
 ## So when's Perl 8 coming out?
 
-We would like Perl 8 to happen in less than 5 years. It would have several new features enabled by default.
+While we are excited about Perl 7, we're most excited about Perl 8 and beyond. We would like Perl 8 to happen in less than 5 years. It would have several new features enabled by default.
 
 ## What about github.com/perl/perl5 is it named wrong now?
 
