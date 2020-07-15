@@ -4,14 +4,14 @@ This document attempts to summarize where everyone is at in their preferred plan
 
 At this time we have no informationon where these people stand because they have not responded in any known forum.
 
-Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram
+Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
 
 ## In Perl 7 the defaults change
 
 
 Pro: Nicolas R., Jim, Sawyer, Todd, Tux, cPanel, Ovid, Karl
 
-Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
+Ok with Sawyer's decision: Yves Orton, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 
 - Perl 7 defaults to [Perl 7 behaviors](Defaults-for-v7) when code is first parsed.
 - Perl 7 does not break well behaved code.
