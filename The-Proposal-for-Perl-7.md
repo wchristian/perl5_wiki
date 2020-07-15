@@ -12,9 +12,11 @@ There are additional details in Sawyer's [update about versioning](https://www.n
 
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
 
-1. Agree on the [new defaults for Perl 7](Defaults-for-v7).
-1. Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
-1. Agree on [how -e and -E will work](How-dash-e-works-in-7)
+1. Discuss
+    - Agree on the [new defaults for Perl 7](Defaults-for-v7).
+    - Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
+    - Agree on [how -e and -E will work](How-dash-e-works-in-7)
+    - Determine what 'use v7' will do.
 1. Prepare blead to work with the required protocol declarations
     1. Add `use v5` to all perl code in blead.
     1. Address fresh_perl issues in 7. Ideally by initially injecting use v5 in them.
