@@ -134,7 +134,7 @@ I think we should consider patching all, if not most, of popular modules (high i
 
 We should also [add a documentation section for XS](https://github.com/Perl/perl5/tree/blead/pod) to recommend using these macros.
 
-Conflicting redefined macros may be a problem. Example: [verion.pm defines PERL_VERSION_LT](https://metacpan.org/source/JPEACOCK/version-0.9924/vutil/vutil.h#L81)
+Conflicting redefined macros may be a problem. Example: [version.pm defines PERL_VERSION_LT](https://metacpan.org/source/JPEACOCK/version-0.9924/vutil/vutil.h#L81). At first glance, it looks like this will only result in a compiler warning which might actually be a good thing!
 
 This solution only fixes the issue if authors update the `ppport.h` they ship with their module.
 
@@ -144,23 +144,25 @@ I think adding the compare macros to Devel::PPPort is a good thing and should be
 
 Patching CPAN is hard. We are still working on fixing modules on CPAN which assume `.` is in `@INC`. 3 years later, 5000 modules on CPAN make incorrect use of Module::Install and are broken for the basic use case of `perl Makefile.PL; make install`
 
-This is exploring the idea that it would be much harder to patch the whole CPAN (and world) rather than fixing Perl internals during the next development cycle.
-
 Here are multiple suggestions, in no specific order:
 
-1. Freeze the PERL_VERSION, PERL_REVISION, ...
+1. Freeze the constants `PERL_VERSION`, `PERL_REVISION`, and `PERL_SUBVERSION`.
 2. Lie to the world... 
 
-#### Freeze the PERL_VERSION, PERL_REVISION, ... variables
+#### Freezing PERL_VERSION constants
 
-These variables could always stay at `5.34.0` for example.
-Potentially this could raise a warning when using any of them.
+The following approach would allow any existing XS code to warn but continue to work as it did previously in Perl 7 and beyond.
 
-But internally we would stop using them in favor of alternate macros (not sure what would be a better name) which would be used widely in core.
+1. Make these constants forever stuck at:
+   - `PERL_REVISION  = 5`
+   - `PERL_VERSION   = 100` # Something high.
+   - `PERL_SUBVERSION= 0`.
+1. Deprecate and warn on any usage of these variables.
+1. Replace these constants in core with something else: `__PERL_CORE_MAJOR`, `__PERL_CORE_MINOR`, `__PERL_CORE_RELEASE`
+    - Discourage their use outside of core.
+1. Encourage the usage of `PERL_VERSION_GT` macros instead.
 
-Note: I could see doing it in the reversed way.
-
-i.e.: defining a single variable like `5000320001` or maybe `5.32.1` then having C macro built around them to extract major, minor, build id... 
+If we choose this plan, I would also like to discuss how the `#define` will work for `__PERL_CORE_MAJOR`. I think they should be inline functions which extract from a single source of knowledge (`__PERL_CORE_VERSION=7.3.8`) instead of integers.
 
 #### Lie to the world
 
