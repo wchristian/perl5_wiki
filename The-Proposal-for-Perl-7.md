@@ -4,8 +4,6 @@ This is the proposal with additional details as presented by [xsawyerx](xsawyerx
 
 There are additional details in Sawyer's [update about versioning](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html).
 
-brian's [perl7faq](https://github.com/briandfoy/perl7faq/blob/master/README.md).
-
 # Intro
 
 7.0.0 will be Perl 5.32.0 but [with new defaults](Defaults-for-v7).
