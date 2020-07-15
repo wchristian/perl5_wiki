@@ -11,9 +11,6 @@
 
 1. `use strict;`
 1. `use warnings;`
-    - We have some anxiety about runtime warnings breaking production code.
-    - Are there warnings we should turn off by default?
-    - Only one person present felt warnings should be off in production code but also acknowledged that the preference of most was to leave it on.
 1. `feature refaliasing`
 ```perl
 my \$x = \$y;
@@ -31,7 +28,7 @@ print "$inner{thing}"
     - Yes there is evidence it's going to break a little bit on CPAN.
     - This is a highly desired feature so the value outweighs the breaks.
 3. `feature fc`
-    - it's a short keyword and might conflict with subroutines.
+    - it's a short keyword and might conflict with existing subroutines.
 4. `feature current_sub`
    - Technically this is a keyword `__SUB__()` -- Sawyer
     
