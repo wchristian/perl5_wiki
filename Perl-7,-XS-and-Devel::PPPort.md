@@ -87,7 +87,7 @@ Note that IMO, this is cleaner, easier to read and probably reduces mistakes...
 
 ## Impact on CPAN
 
-Many XS modules (metrics to get gathered...) are using `PERL_VERSION` without checking for `PERL_REVISION`.
+Many XS modules (152 on CPAN) are using `#if PERL_VERSION` Most do not check for `PERL_REVISION` correctly.
 We can explore multiple solutions to fix them when bumping Perl to 7.
 
 1. provide the compare macros via Devel::PPPort - (view work from Karl)[https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1]
