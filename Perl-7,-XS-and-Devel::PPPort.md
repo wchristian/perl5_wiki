@@ -11,7 +11,7 @@ As [proposed here](The-Proposal-for-Perl-7), The Perl major version will soon be
 When bumping the Perl Major version to 7, this is going to raise two different but related issues with XS code.
 
 1. Incorrect and common usage of `PERL_VERSION` checks in xs code
-1. An existing protection in `ppport.h` provided by [Devel::PPPort] (https://metacpan.org/pod/Devel::PPPort) to die on major version above 5
+1. An existing protection in `ppport.h` provided by [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to die on major version above 5
 
 # Incorrect usage of PERL_VERSION
 
