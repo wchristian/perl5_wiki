@@ -9,7 +9,7 @@ Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram
 ## In Perl 7 the defaults change
 
 
-Pro: [Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
+Pro: Nicolas R., Jim, Sawyer, Todd, Tux, cPanel, Ovid, Karl
 
 Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 
