@@ -33,19 +33,21 @@ Tony, PPI folks
 - require both v5/v7 for perl 7.2.0 June 2021
 - There's never confusion parsing code what protocol you're looking at.
 
-## module or class
-
-Paul, ilmari
-
-- Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
-- Code still using the older `package` to be considered legacy v5 and will one day be removed
-
 ## v5 implied until vX is seen
 
-Leon, Karen, Dave M, ilmari
+Leon, Karen, Dave M, Paul, ilmari
 
 - Defaults do not change
 - No widespread breakage of the perl ecosystem
 - **No fork between perl5 and perl7 community and ecosystem**
 - Only one /usr/bin/perl
 - perl7 will use perl5 defaults, explicit use v7 for greater messaging and usage of new features
+
+#### module or class
+
+Additionally:
+
+Paul, ilmari
+
+- Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
+- Code still using the older `package` to be considered legacy v5 and will one day be removed
