@@ -6,12 +6,11 @@ At this time we have no informationon where these people stand because they have
 
 Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram
 
-## Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
-- Whatever Sawyer decides.
-
 ## In Perl 7 the defaults for `$^H`, `%{^H}, and `${^WARNINGS},` change
 
-[Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
+
+Pro: [Nicolas R.](https://github.com/atoomic), Jim, Sawyer, [Todd](https://github.com/toddr), Tux, cPanel, Ovid, Karl
+Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
 
 - perl 7 defaults to [v7 behaviors](Defaults-for-v7) when code is first parsed.
 - Perl 7 does not break well behaved code.
