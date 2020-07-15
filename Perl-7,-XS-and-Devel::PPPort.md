@@ -161,10 +161,10 @@ The main issue was coming from the check in [parts/inc/version](https://github.c
 
 ## Questions / Exploring Solutions
 
-1. Why `ppport.h` need to be shipped with a distro?
-2. Could Devel-PPPort start shipping `ppport.h` in a shared_lib directory which could then be consume by other modules?
-3. Could we envision a toolchain patch to automatically update `ppport.h` when detecting a version?
-
-Is patching the whole CPAN the only way?
-What other solutions can we consider to try to solve that problem?
+1. Why does `ppport.h` need to be shipped with each CPAN distro?
+    - This is similar mistake we made with [Module::Install](https://rt.cpan.org/Public/Bug/Display.html?id=118958)
+2. Devel-PPPort could start shipping `ppport.h` in a shared_lib directory which could then be consumed by other modules
+3. Should toolchain patch CPAN installs automatically update `ppport.h` when detecting a dated copy of the header file?
+    - Is patching all of CPAN the only way?
+1. What other solutions can we consider to try to solve that problem?
 
