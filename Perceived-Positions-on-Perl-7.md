@@ -4,7 +4,7 @@ This document attempts to summarize where everyone is at in their preferred plan
 
 At this time we have no information on where these people stand because they have not responded in any known forum.
 
-Ilmari, Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
+Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
 
 ## In Perl 7 the defaults change
 
@@ -35,14 +35,14 @@ Tony, PPI folks, Editor Parsers, display parsers (github)
 
 ## module or class
 
-Paul
+Paul, ilmari
 
 - Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
 - Code still using the older `package` to be considered legacy v5 and will one day be removed
 
 ## v5 implied until vX is seen
 
-Leon, Karen, Dave M
+Leon, Karen, Dave M, ilmari
 
 - Defaults do not change
 - No widespread breakage of the perl ecosystem
