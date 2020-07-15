@@ -52,13 +52,15 @@ Other responsibilities
 
 # Current Perl Steering Committee members
 
-- Sawyer
-- Paul Evans
-- Todd Rinaldo
-- H.Merijn Brand
-- James E Keenan
-- Karl Williamson
-- Nicolas Rochelemagne
+- [Sawyer](https://github.com/xsawyerx)
+- [Paul Evans](https://github.com/leonerd)
+- [Todd Rinaldo](https://github.com/toddr)
+- [H.Merijn Brand](https://github.com/Tux)
+- [James Keenan](https://github.com/jkeenan)
+- [Karl Williamson](https://github.com/khwilliamson)
+- [Nicolas Rochelemagne](https://github.com/atoomic)
+- [John Lightsey](https://github.com/lightsey)
+- [Ricardo Signes](https://github.com/rjbs)
 - Yves Orton
 - Leon Timmermans
 - Dave Mitchell
@@ -70,3 +72,4 @@ Other responsibilities
 
 # Past Meeting Notes
 - [[SC Notes 2020-07-12]]
+- [[SC Notes 2020-07-14]]
