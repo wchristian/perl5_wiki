@@ -8,7 +8,7 @@ brian's [perl7faq](https://github.com/briandfoy/perl7faq/blob/master/README.md).
 
 # Intro
 
-7.0.0 will be Perl 5.32.0 but enforce a [Perl Protocol Declaration](Perl-Protocol-Declaration) before any code is parsed. Versioning will proceed according to the [existing versioning plan](Perl-7-Versioning).
+7.0.0 will be Perl 5.32.0 but [with new defaults](Defaults-for-v7).
 
 # What we need to do before Perl 7
 
