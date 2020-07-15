@@ -11,13 +11,13 @@ As [proposed here](The-Proposal-for-Perl-7), The Perl major version will soon be
 When bumping the Perl Major version to 7, this is going to raise two different but related issues with XS code.
 
 1. Incorrect and common usage of `PERL_VERSION` checks in xs code
-1. An existing protection in `ppport.h` provided by [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to die on major version above 5
+1. An existing protection in `ppport.h` provided by [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to die if the major version is not 5
 
-# Incorrect usage of PERL_VERSION
+# Incorrect usage of `PERL_VERSION`
 
 ## Description of the problem
 
-It's a common pattern, even if incorrect as incomplete to have such pattern in xs code:
+It is a common pattern(even if incorrect) to check only `PERL_VERSION` in xs code:
 
 ```c
 #if PERL_VERSION < 13 || (PERL_VERSION == 13 && PERL_SUBVERSION < 9)
@@ -26,7 +26,7 @@ It's a common pattern, even if incorrect as incomplete to have such pattern in x
 ```
 [read more from cpan/Scalar-List-Utils/ListUtil.xs](https://github.com/Perl/perl5/blob/e4543a2055aeeb5ef42eb7a84fae20b71643c972/cpan/Scalar-List-Utils/ListUtil.xs#L137)
 
-The check above is incomplete as it's missing a check on `PERL_REVISION` which is assume to stay at 5 forever.
+The check is incomplete. It is missing a check on `PERL_REVISION`. This code assumes Perl will never exceed version 5.
 
 ## Exploring solutions
 
