@@ -1,3 +1,5 @@
+**DRAFT** This is a working document of how we think things might work going forward. Nothing has been finalized.
+
 # Intro
 
 The "Perl Steering Committee" is responsible for the Design & implementation of the Perl programming language
