@@ -17,7 +17,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     - Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
     - Agree on [how -e and -E will work](How-dash-e-works-in-7)
     - Determine what 'use v7' will do.
-1. [Prepare for Perl 7 XS](Perl-7,-XS-and-Devel::PPPort)
+1. [Prepare for Perl 7 XS](Perl-7-XS-and-Devel::PPPort)
     1. Provide a macro to compare major and minor versions, not just minor versions.
     1. Update [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to support the new XS macro in prior versions of Perl.
     1. Fix all blead XS to support `PERL_REVISION=7`
