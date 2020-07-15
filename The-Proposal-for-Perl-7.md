@@ -16,7 +16,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 
 1. Agree on the [new defaults for Perl 7](Defaults-for-v7).
 1. Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
-1. Agree on [how -e and -E will work](How--e-works-in-7) (-5 by default)
+1. Agree on [how -e and -E will work](How-dash-e-works-in-7)
 1. Prepare blead to work with the required protocol declarations
     1. Add `use v5` to all perl code in blead.
     1. Address fresh_perl issues in 7. Ideally by initially injecting use v5 in them.
