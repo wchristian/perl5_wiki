@@ -142,11 +142,12 @@ With such a solution, I expect that it would not be mandatory (even if recommene
 
 .... 
 
-# Protection in Devel::PPPort
+# Protections in `ppport.h`
 
-The second issue we are facing comes from an internal protection in Devel::PPPort itself.
+The second issue we are facing comes from an internal protection in `ppport.h` itself which breaks if `PERL_REVISION` is not 5. Over 1017 XS modules on CPAN include a `ppport.h` that needs to be updated and a re-released to CPAN.
 
-This was once again fixed by Karl via [this commit](https://github.com/Dual-Life/Devel-PPPort/commit/293861b9234e45fb1a3018959caaab2086bc6fbd).
+For example `Class-XSAccessor-1.19` comes with [ppport.h](https://metacpan.org/source/SMUELLER/Class-XSAccessor-1.19/ppport.h) 
+This has been fixed by Karl via [this commit](https://github.com/Dual-Life/Devel-PPPort/commit/293861b9234e45fb1a3018959caaab2086bc6fbd).
 
 The main issue was coming from the check in [parts/inc/version](https://github.com/Dual-Life/Devel-PPPort/blob/v3.58/parts/inc/version#L49)
 ```c
@@ -157,13 +158,6 @@ The main issue was coming from the check in [parts/inc/version](https://github.c
 #  error ppport.h only works with Perl version 5
 #endif /* PERL_REVISION != 5 */
 ```
-
-This globally a good thing. 
-The problem is that many XS modules are shipping a frozen version of `ppport.h`.
-
-For example `Class-XSAccessor-1.19` comes with [ppport.h](https://metacpan.org/source/SMUELLER/Class-XSAccessor-1.19/ppport.h)
-
-This was recently bumped from the version from 3.52 by [this commit](https://github.com/tsee/Class-XSAccessor/commit/0b6e237fc302628311eca415597a197f8acbb780)
 
 ## Questions / Exploring Solutions
 
