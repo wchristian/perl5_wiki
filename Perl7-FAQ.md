@@ -12,7 +12,7 @@ We could have done many things, but we had to choose one of them. Perl 7 is what
 
 ### What are the new defaults?
 
-[We're still talking about that here](Defaults-for-v7). We don't know for sure because we don't have Perl 7 yet. These are some of the things already on the list, although there's no guarantee on anything yet:
+We're still talking about that in [Defaults for v7](Defaults-for-v7). We don't know for sure because we don't have Perl 7 yet. These are some of the things already on the list, although there's no guarantee on anything yet:
 
 * enable strict by default
 * enable warnings by default
@@ -24,7 +24,7 @@ We'd like to be done in less than a year. Ideally sooner.
 
 ### How can I help?
 
-Right now we're early in planning. The details as we understand them can be [found here](The-Proposal-for-Perl-7). What we know right now is that well behaved CPAN code should just work. 
+Right now we're early in planning. The details as we understand them are in [The Proposal for Perl 7](The-Proposal-for-Perl-7). What we know right now is that well behaved CPAN code should just work. 
 
 If you are an author, take a look at your own code. You can see a report on your modules by updating this URL with your own PAUSE ID: https://cpants.cpanauthors.org/author/XSAWYERX
 
