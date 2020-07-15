@@ -14,6 +14,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 
 1. Discuss
     - Agree on the [new defaults for Perl 7](Defaults-for-v7).
+    - Determine how to put perl 7 into perl 5 mode
     - Update [pod / policy documents](Changes-to-policies-in-Perl-7) to state how development has changed.
     - Agree on [how -e and -E will work](How-dash-e-works-in-7)
     - Determine what 'use v7' will do.
