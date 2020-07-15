@@ -21,7 +21,7 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
 1. Prepare for Perl 7 XS
     1. Provide a macro to compare major and minor versions, not just minor versions.
     1. Update [Devel::PPPort](https://metacpan.org/pod/Devel::PPPort) to support the new XS macro in prior versions of Perl.
-    1. Fix all blead XS to support `PERL_MAJOR=7`
+    1. Fix all blead XS to support `PERL_REVISION=7`
 1. Update Core perl code to remove `use v5` where it is not needed.
 1. Testing
     1. Test Suite passing
