@@ -1,6 +1,8 @@
-# What should perl 7 defaults be?
+# Intro
 
-## On by default
+The following defaults have been proposed for Perl 7. They were chosen because the belief is that they would break very little well behaved code.
+
+# On by default
 
 1. `use strict;`
 1. `use warnings;`
@@ -13,7 +15,7 @@ print "$inner{thing}"
 }
 ```
 
-### New keywords on by default.
+# New keywords on by default.
 
 1. `feature state`
 1. `feature evalbytes`
@@ -25,14 +27,14 @@ print "$inner{thing}"
 4. `feature current_sub`
    - Technically this is a keyword `__SUB__()` -- Sawyer
     
-## Features not experimental anymore
+# Features not experimental anymore
 1. `current_sub`
 1. `postderef`
 1. `postderef_qq`
 1. `signatures`
 1. `lexical_sub`
 
-## Not to be included
+# Not to be included
 
 1. `use re 'strict'`
     - Could break a big chunk of CPAN.
