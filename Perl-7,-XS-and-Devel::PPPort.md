@@ -144,13 +144,6 @@ I think adding the compare macros to Devel::PPPort is a good thing and should be
 
 Patching CPAN is hard. We are still working on fixing modules on CPAN which assume `.` is in `@INC`. 3 years later, 5000 modules on CPAN make incorrect use of Module::Install and are broken for the basic use case of `perl Makefile.PL; make install`
 
-Here are multiple suggestions, in no specific order:
-
-1. Freeze the constants `PERL_VERSION`, `PERL_REVISION`, and `PERL_SUBVERSION`.
-2. Lie to the world... 
-
-#### Freezing PERL_VERSION constants
-
 The following approach would allow any existing XS code to warn but continue to work as it did previously in Perl 7 and beyond.
 
 1. Make these constants forever stuck at:
