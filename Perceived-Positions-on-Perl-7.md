@@ -25,20 +25,26 @@ Ok with Sawyer's decision: Yves Orton, Aaron Crane, Stevan Little, John Lightsey
 - distros May have `/usr/bin/perl5` and `/usr/bin/perl7`
     - This is ok. They're used to that when transitioning to a new major version.
 
-## Tony
+## v5 implied a year then v5/v7 required in all code.
+
+Tony, PPI folks, Editor Parsers, display parsers (github)
+
 - use v5 is implied for 7.0.0 in ~45 days
 - require both v5/v7 for perl 7.2.0 June 2021
+- There's never confusion parsing code what protocol you're looking at.
 
-## Paul
+## module or class
+
+Paul
+
 - Add `module` (and eventually `class`) keywords; similar to `package` but implies current major version inside
 - Code still using the older `package` to be considered legacy v5 and will one day be removed
 
-## Leon, Karen, Dave M
+## Defaults do not change
+
+Leon, Karen, Dave M
+
 - No widespread breakage of the perl ecosystem
 - **No fork between perl5 and perl7 community and ecosystem**
 - Only one /usr/bin/perl
 - perl7 will use perl5 defaults, explicit use v7 for greater messaging and usage of new features
-
-## PPI folks, Editor Parsers, display parsers (github)
-- use v5/v7 required.
-- There's never confusion parsing code what protocol you're looking at.
