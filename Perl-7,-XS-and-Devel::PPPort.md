@@ -164,14 +164,6 @@ The following approach would allow any existing XS code to warn but continue to 
 
 If we choose this plan, I would also like to discuss how the `#define` will work for `__PERL_CORE_MAJOR`. I think they should be inline functions which extract from a single source of knowledge (`__PERL_CORE_VERSION=7.3.8`) instead of integers.
 
-#### Lie to the world
-
-Bumping `PERL_REVISION` from 5 to 7 is probably fine by itself and I expect the number of XS modules being broken by that simple bump being very limited. (we could probably gather some metrics)
-
-What's problematic is the bump of `PERL_VERSION` from 32 to 0 for example. (decreasing the number)
-Suggestion make the `PERL_VERSION` bump from 32 to 7000 (for example), and adjust internaly where it makes sense to remove 7000 for `~cosmetic` usages. Example with `perl -V`.
-
-With such a solution, I expect that it would not be mandatory (even if recommeneded) to patch all the XS distribution out in the world.
 
 
 
