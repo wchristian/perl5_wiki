@@ -24,7 +24,12 @@ We'd like to be done in less than a year. Ideally sooner.
 
 ### How can I help?
 
-Right now we're early in planning. The details as we understand them can be [found here](The-Proposal-for-Perl-7).
+Right now we're early in planning. The details as we understand them can be [found here](The-Proposal-for-Perl-7). What we know right now is that well behaved CPAN code should just work. 
+
+If you are an author, take a look at your own code. You can see a report on your modules by updating this URL with your own PAUSE ID: https://cpants.cpanauthors.org/author/XSAWYERX
+
+You could also look at this list and provide fixes to the authors who are not yet using strict/warnings in all locations: 
+ https://cpants.cpanauthors.org/kwalitee/use_strict
 
 ### Will Perl 7 run my Perl 5 code?
 
