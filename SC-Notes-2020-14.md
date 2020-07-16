@@ -1,0 +1,1 @@
+This page is now located [here](https://github.com/Perl/perl5/wiki/SC-Notes-2020-07-14).
