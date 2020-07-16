@@ -167,4 +167,12 @@ ppport.h would do something like this:
 #endif
 ```
 
+From khw:
+
+I'll cut to the bottom line.  It's easy, using an idea from Todd, to change core and ppport.h going forward so that no module need change existing source to get proper version control, and adding the macros allows future code to do it right.
+
+But the problem is that this requires a new version of ppport.h.  When a new version of a module is released, the author is supposed to drop in the latest ppport.h, but not all do, and we want existing module releases to work with new perls if they aren't doing the things we are trying to get rid of.  It appears to several of this that the code that installs a module onto a perl instance needs to know about and use the latest ppport.h.  And that is really what this working group should be looking at.
+
+I believe Paul has some working solutions to similar problems.  I'd like to hear from anyone with ideas
+
 
