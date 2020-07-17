@@ -43,7 +43,7 @@ An improved usage of `PERL_VERSION` would always check the `PERL_REVISION`
 ### Using a macro to perform the comparison
 
 A much better solution would be to use some alternate macro designed for the job.
-If you look at existing XS, these macros can bee seen copied in multiple XS files.
+If you look at existing XS, these macros can be seen copied in multiple XS files.
 
 Here is a version of them using multiple flavors depending what check you need
 ```c
