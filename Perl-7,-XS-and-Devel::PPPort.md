@@ -119,7 +119,7 @@ Many XS modules (152 on CPAN) are using `#if PERL_VERSION` Most do not check for
 
 There are several ways we have thought of already to fix this problem. There may be more:
 
-1. Provide the compare macros (`PERL_VERSION_GT(5,21,2`) via Devel::PPPort - (view work from Karl)[https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1]
+1. Provide the compare macros (`PERL_VERSION_GT(5,21,2`) via Devel::PPPort - [view work from Karl](https://github.com/Dual-Life/Devel-PPPort/commit/edccecc51ea9235e17d0a4a8e8a18e48caa3a3f1)
 1. Patch Perl core itself rather than patching all modules
 
 ### Compare macros
