@@ -4,7 +4,7 @@
 
 ## Introduction
 
-As [proposed here](The-Proposal-for-Perl-7), The Perl major version will soon be bumped from 5 to 7, opening the road to 8, 9, ... in the near future. 
+As [proposed here](The-Proposal-for-Perl-7), The Perl major version will soon be bumped from 5 to 7, opening the road to 8, 9, ... later on. 
 
 ## The Problems
 
