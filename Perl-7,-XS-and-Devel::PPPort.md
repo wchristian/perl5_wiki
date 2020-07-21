@@ -187,3 +187,12 @@ As to the version macros I'm not entirely comfortable with making the old PERL_R
 ## From jkeenan:
 
 A side note:  As of this weekend, in the `p7` branch in @atoomic's repository, all tests for `dist/Devel-PPPort/t/*.t` now PASS and run without warnings.
+
+## From ether:
+
+If the module declares itself as v7 compatible, then the old PERL_REVISION macros should not be available at all.
+(As stated, the old macros were bad because you could test minor version independently of major version, so people got lazy and omitted major version - this behaviour should no longer be allowed.)  Instead, an updated-for-p7 module should use the new proposed macro where both major and minor versions must be passed.
+
+We could also add a deprecation warning during compilation when the old macros are used (so any module author updating to a newer ppport.h will see it) advising to switch to the new macros.
+
+I would also add a check to all ppport.h versions starting today, advising that the author upgrade if the file is over N days old (with N to be bikeshed but a value of something like 60 to 90 days might be reasonable, as Devel::PPPort sees frequent releases). This requires embedding the release timestamp into the file, so it won't work for any existing ppport.h files in the wild of course.  Or, alternatively, the age of the file could be inferred from the latest blead version that the file supports. but since changes need to be made anyway to add these checks, we might as well be direct and use a timestamp.
