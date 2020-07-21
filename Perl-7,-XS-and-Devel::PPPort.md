@@ -151,6 +151,7 @@ The following approach would allow any existing XS code to warn but continue to 
    - `PERL_VERSION   = 100` # Something high.
    - `PERL_SUBVERSION= 0`.
 1. Deprecate and warn on any usage of these variables.
+   - gcc has a feature to warn on use of deprecated variables.
 1. Replace these constants in core with something else: `PERL_CORE_MAJOR_`, `PERL_CORE_MINOR_`, `PERL_CORE_RELEASE_`
     - Discourage their use outside of core.
 1. Encourage the usage of `PERL_VERSION_GT` macros instead.
