@@ -191,7 +191,7 @@ A side note:  As of this weekend, in the `p7` branch in @atoomic's repository, a
 ## From ether:
 
 - remove PERL_VERSION and PERL_REVISION macros in p7 core.
-- add PERL_VERSION and PERL_REVISION macros in new Devel::PPPort (shipped with p7 core (and also made available to p5 distributions) - under p7, PERL_VERSION will be fixed to 5 and PERL_REVISION to some high value (as atoomic suggested above). under p5 they retain their real values. But add deprecation warnings to them to push authors to switch to the new macros where major and minor versions must be tested together.
+- add PERL_VERSION and PERL_REVISION macros in new Devel::PPPort (shipped with v7 core (and also made available to v5 distributions) - under v7, PERL_VERSION will be fixed to 5 and PERL_REVISION to some high value (as atoomic suggested above). under v5 they retain their real values. But add deprecation warnings to them to push authors to switch to the new macros where major and minor versions must be tested together.
 
 I would also add a check to all ppport.h versions starting today, advising that the author upgrade if the file is over N days old (with N to be bikeshed but a value of something like 60 to 90 days might be reasonable, as Devel::PPPort sees frequent releases). This requires embedding the release timestamp into the file, so it won't work for any existing ppport.h files in the wild of course.  Or, alternatively, the age of the file could be inferred from the latest blead version that the file supports. but since changes need to be made anyway to add these checks, we might as well be direct and use a timestamp.
 
