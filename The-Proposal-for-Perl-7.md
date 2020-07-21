@@ -8,7 +8,7 @@ There are additional details in Sawyer's [update about versioning](https://www.n
 
 7.0.0 will be Perl 5.32.0 but [with new defaults](Defaults-for-v7).
 
-# What we need to do to release Perl 7
+# What we need to do to release Perl 7.0.0
 
 The goal for 7.0 is to keep the scope as limited as possible to assure a rapid release of 7 so development of 7.1 can start as soon as possible. The more scope we add to 7.0, the more risk we add that it cannot be delivered in a timely fashion.
 
