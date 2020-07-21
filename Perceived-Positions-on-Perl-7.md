@@ -24,6 +24,7 @@ Ok with Sawyer's decision: Yves Orton, Stevan Little, John Lightsey, Chris Willi
 - Perl 5 goes into maintenance mode. There is no fork.
 - distros May have `/usr/bin/perl5` and `/usr/bin/perl7`
     - This is ok. They're used to that when transitioning to a new major version.
+    - We don't get to make this decision.
 
 ## v5 implied a year then v5/v7 required in all code.
 
