@@ -184,3 +184,7 @@ If we decide that it's preferable that dists use Devel::PPPort as a dependency a
 Possibly EU::MM/M::B could look for a bundled ppport.h and add the dependency implicitly (which will largely fix things for perl7)
 
 But dists are going to break, if they don't update themselves, then NEXT is meant to handle it, handle it there, open a ticket upstream and go on with our lives.
+
+From jkeenan:
+
+A side note:  As of this weekend, in the `p7` branch in @atoomic's repository, all tests for `dist/Devel-PPPort/t/*.t` now PASS and run without warnings.
