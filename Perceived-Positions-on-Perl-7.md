@@ -4,7 +4,7 @@ This document attempts to summarize where everyone is at in their preferred plan
 
 At this time we have no information on where these people stand because they have not responded in any known forum.
 
-Steve Hay, Slaven Rezic, Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
+Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
 
 ## In Perl 7 the defaults change
 
