@@ -178,13 +178,11 @@ I believe Paul has some working solutions to similar problems.  I'd like to hear
 
 From tonyc:
 
-I think all we can do is update Devel::PPPort to use the version comparison macros, and document them as best practice.
+I think the best we can do is update Devel::PPPort to use the version comparison macros, and document them as best practice.
 
 If we decide that it's preferable that dists use Devel::PPPort as a dependency and not bundle then document that both in Devel::PPPort and perlxs, *with examples*.
 
-Possibly EU::MM/M::B could look for a bundled ppport.h and add the dependency implicitly (which will largely fix things for perl7)
-
-But dists are going to break, if they don't update themselves, then NEXT is meant to handle it, handle it there, open a ticket upstream and go on with our lives.
+As to the version macros I'm not entirely comfortable with making the old PERL_REVISION macros lie, but I don't strongly object to it if it's going to keep backward compatibility that well.  Will `$]` also return 5.999999?
 
 From jkeenan:
 
