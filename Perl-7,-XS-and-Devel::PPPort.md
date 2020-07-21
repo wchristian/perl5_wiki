@@ -168,7 +168,7 @@ ppport.h would do something like this:
 #endif
 ```
 
-From khw:
+## From khw:
 
 I'll cut to the bottom line.  It's easy, using an idea from Todd, to change core and ppport.h going forward so that no module need change existing source to get proper version control, and adding the macros allows future code to do it right.
 
@@ -176,7 +176,7 @@ But the problem is that this requires a new version of ppport.h.  When a new ver
 
 I believe Paul has some working solutions to similar problems.  I'd like to hear from anyone with ideas
 
-From tonyc:
+## From tonyc:
 
 I think the best we can do is update Devel::PPPort to use the version comparison macros, and document them as best practice.
 
@@ -184,6 +184,6 @@ If we decide that it's preferable that dists use Devel::PPPort as a dependency a
 
 As to the version macros I'm not entirely comfortable with making the old PERL_REVISION macros lie, but I don't strongly object to it if it's going to keep backward compatibility that well.  Will `$]` also return 5.999999?
 
-From jkeenan:
+## From jkeenan:
 
 A side note:  As of this weekend, in the `p7` branch in @atoomic's repository, all tests for `dist/Devel-PPPort/t/*.t` now PASS and run without warnings.
