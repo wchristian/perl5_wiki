@@ -45,5 +45,9 @@ The goal for 7.0 is to keep the scope as limited as possible to assure a rapid r
     * Convert prototypes to use `:prototype` so they are compatible with subroutine signatures
     * detect and warn about subroutines named fc, say, state, switch, etc. (depending on what p7 defaults are chosen)
 1. Make and execute a plan for documentation changes (7.1?)
+1. Make a plan for Perl "5" things
+    * Environment variables **PERL5LIB**
+    * Perl 5 Porters
+    * Perl 5 debugger.
 
 More questions? [Try the FAQ!](Perl7-FAQ)
