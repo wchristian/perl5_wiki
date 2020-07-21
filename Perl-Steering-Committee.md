@@ -61,13 +61,13 @@ Other responsibilities
 - [Nicolas Rochelemagne](https://github.com/atoomic)
 - [John Lightsey](https://github.com/lightsey)
 - [Ricardo Signes](https://github.com/rjbs)
+- [Dagfinn Ilmari Mannsåker](https://github.com/ilmari)
+- [Tony Cook](https://github.com/tonycoz)
 - Yves Orton
 - Leon Timmermans
 - Dave Mitchell
 - Aaron Crane
-- Dagfinn Ilmari Mannsåker
 - Hugo van der Sanden
-- Tony Cook
 - Steve Hay
 
 # Past Meeting Notes
