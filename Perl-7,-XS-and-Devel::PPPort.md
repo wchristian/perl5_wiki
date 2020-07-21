@@ -196,3 +196,5 @@ If the module declares itself as v7 compatible, then the old PERL_REVISION macro
 We could also add a deprecation warning during compilation when the old macros are used (so any module author updating to a newer ppport.h will see it) advising to switch to the new macros.
 
 I would also add a check to all ppport.h versions starting today, advising that the author upgrade if the file is over N days old (with N to be bikeshed but a value of something like 60 to 90 days might be reasonable, as Devel::PPPort sees frequent releases). This requires embedding the release timestamp into the file, so it won't work for any existing ppport.h files in the wild of course.  Or, alternatively, the age of the file could be inferred from the latest blead version that the file supports. but since changes need to be made anyway to add these checks, we might as well be direct and use a timestamp.
+
+(Note: a common trick used in toolchain to do author-only warnings, so users installing from cpan do not see the same warnings, is `-d '.git' or !-f 'META.json'`.)
