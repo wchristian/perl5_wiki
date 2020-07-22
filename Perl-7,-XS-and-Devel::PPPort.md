@@ -161,7 +161,7 @@ If we choose this plan, I would also like to discuss how the `#define` will work
 
 ppport.h would do something like this:
 ```c
-#ifndef PERL_VERSION_DEPRECATED <--- we're on 5
+#ifndef PERL_VERSION_MAJOR <--- we're on Perl 5
 # define GT macros.
 #else
 ... Do nothing
