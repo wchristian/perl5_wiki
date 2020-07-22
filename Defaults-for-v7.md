@@ -8,6 +8,7 @@ One or more audits of these defaults against CPAN should be attempted in order t
 
 1. `use strict;`
 1. `use warnings;`
+1. `unicode_strings`
 1. `feature refaliasing`
 ```perl
 my \$x = \$y;
@@ -60,4 +61,4 @@ foreach my \%inner (@list_of_hashrefs) {
     - This setting is currently well known to be very disruptive to several major code bases.
 11. `feature switch`
     - In its current state we are very unhappy with it.
-12. `unicode_strings` / `unicode_eval`
+12. `unicode_eval`
