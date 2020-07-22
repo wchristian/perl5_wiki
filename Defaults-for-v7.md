@@ -8,7 +8,7 @@ One or more audits of these defaults against CPAN should be attempted in order t
 
 1. `use strict;`
 1. `use warnings;`
-1. `unicode_strings`
+1. `feature unicode_strings`
 1. `feature refaliasing`
 ```perl
 my \$x = \$y;
