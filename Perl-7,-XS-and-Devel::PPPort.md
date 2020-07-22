@@ -148,7 +148,7 @@ The following approach would allow any existing XS code to warn but continue to 
 
 1. Make these constants forever stuck at:
    - `PERL_REVISION  = 5`
-   - `PERL_VERSION   = 100` # Something high.
+   - `PERL_VERSION   = 700` # Something high.
    - `PERL_SUBVERSION= 0`.
 1. Deprecate and warn on any usage of these variables.
    - gcc has a feature to warn on use of deprecated variables.
