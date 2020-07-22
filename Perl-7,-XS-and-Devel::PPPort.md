@@ -168,25 +168,9 @@ ppport.h would do something like this:
 #endif
 ```
 
-## From khw:
-
-I'll cut to the bottom line.  It's easy, using an idea from Todd, to change core and ppport.h going forward so that no module need change existing source to get proper version control, and adding the macros allows future code to do it right.
-
-But the problem is that this requires a new version of ppport.h.  When a new version of a module is released, the author is supposed to drop in the latest ppport.h, but not all do, and we want existing module releases to work with new perls if they aren't doing the things we are trying to get rid of.  It appears to several of this that the code that installs a module onto a perl instance needs to know about and use the latest ppport.h.  And that is really what this working group should be looking at.
-
-I believe Paul has some working solutions to similar problems.  I'd like to hear from anyone with ideas
-
 ## From tonyc:
 
-I think the best we can do is update Devel::PPPort to use the version comparison macros, and document them as best practice.
-
-If we decide that it's preferable that dists use Devel::PPPort as a dependency and not bundle then document that both in Devel::PPPort and perlxs, *with examples*.
-
 As to the version macros I'm not entirely comfortable with making the old PERL_REVISION macros lie, but I don't strongly object to it if it's going to keep backward compatibility that well.  Will `$]` also return 5.999999?
-
-## From jkeenan:
-
-A side note:  As of this weekend, in the `p7` branch in @atoomic's repository, all tests for `dist/Devel-PPPort/t/*.t` now PASS and run without warnings.
 
 ## From ether:
 
