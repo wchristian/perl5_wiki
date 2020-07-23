@@ -55,9 +55,9 @@ Other responsibilities
 # Current Perl Steering Committee members
 
 - [Sawyer](https://github.com/xsawyerx)
-- [Paul Evans](https://github.com/leonerd)
+- [Paul Evans](https://github.com/leonerd) (LeoNerd)
 - [Todd Rinaldo](https://github.com/toddr)
-- [H.Merijn Brand](https://github.com/Tux)
+- [H.Merijn Brand](https://github.com/Tux) (Tux)
 - [James Keenan](https://github.com/jkeenan)
 - [Karl Williamson](https://github.com/khwilliamson)
 - [Nicolas Rochelemagne](https://github.com/atoomic)
