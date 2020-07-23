@@ -1,5 +1,7 @@
 **DRAFT** This is a working document of how we think things might work going forward. Nothing has been finalized.
 
+[[Past Perl Steering Committee Meeting Minutes]]
+
 # Intro
 
 The "Perl Steering Committee" is responsible for the Design & implementation of the Perl programming language
@@ -69,8 +71,3 @@ Other responsibilities
 - Aaron Crane
 - Hugo van der Sanden
 - Steve Hay
-
-# Past Meeting Notes
-- [[SC Notes 2020-07-12]]
-- [[SC Notes 2020-07-14]]
-- [[SC Notes 2020-07-21]]
