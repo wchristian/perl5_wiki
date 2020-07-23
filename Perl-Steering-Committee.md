@@ -61,7 +61,7 @@ Other responsibilities
 - [James Keenan](https://github.com/jkeenan)
 - [Karl Williamson](https://github.com/khwilliamson)
 - [Nicolas Rochelemagne](https://github.com/atoomic)
-- [John Lightsey](https://github.com/lightsey)
+- [John Lightsey](https://github.com/lightsey) (JD)
 - [Ricardo Signes](https://github.com/rjbs)
 - [Dagfinn Ilmari Mannsåker](https://github.com/ilmari)
 - [Tony Cook](https://github.com/tonycoz)
