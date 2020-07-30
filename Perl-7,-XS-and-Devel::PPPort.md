@@ -157,8 +157,6 @@ The following approach would allow any existing XS code to warn but continue to 
 1. Encourage the usage of `PERL_VERSION_GT` macros instead.
 1. Patch Devel::PPPort to use `PERL_VERSION_LE` macros instead of VERSION checks on perl 7 and above
 
-If we choose this plan, I would also like to discuss how the `#define` will work for `PERL_VERSION_MAJOR`. I think they should be inline functions which extract from a single source of knowledge (`PERL_CORE_VERSION=7.3.8`) instead of integers.
-
 ppport.h would do something like this:
 ```c
 #ifndef PERL_VERSION_MAJOR <--- we're on Perl 5
