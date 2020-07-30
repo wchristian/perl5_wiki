@@ -180,8 +180,9 @@ ppport.h would do something like this:
 As to the version macros I'm not entirely comfortable with making the old PERL_REVISION macros lie, but I don't strongly object to it if it's going to keep backward compatibility that well.  Will `$]` also return 5.999999?
 
 > answer from Nico
->> ./perl -Ilib -E 'say $]'
->> 7.001000
+> `$]` is going to stay accurate, we are only changing the macro to avoid XS breakage
+> > ./perl -Ilib -E 'say $]'
+> > 7.001000
 
 ## From ether:
 
