@@ -168,6 +168,15 @@ ppport.h would do something like this:
 #endif
 ```
 
+### Versioning ideas schemes:
+
+- Python uses [MAJOR.MINOR.MICRO.RELEASE.SERIAL](https://docs.python.org/3/c-api/apiabiversion.html)
+    - Using each version as a byte and using hex to show the version is certainly interesting and makes comparisons easier.
+- Ruby does [MAJOR.MINOR.TEENY.PATCH](https://docs.python.org/3/c-api/apiabiversion.html)
+- Semver.org recommends [MAJOR.MINOR.PATCH](https://semver.org/)
+
+#Comments
+
 ## From tonyc:
 
 As to the version macros I'm not entirely comfortable with making the old PERL_REVISION macros lie, but I don't strongly object to it if it's going to keep backward compatibility that well.  Will `$]` also return 5.999999?
