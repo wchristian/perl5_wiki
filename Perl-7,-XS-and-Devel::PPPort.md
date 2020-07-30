@@ -180,3 +180,18 @@ As to the version macros I'm not entirely comfortable with making the old PERL_R
 I would also add a check to all ppport.h versions starting today, advising that the author upgrade if the file is over N days old (with N to be bikeshed but a value of something like 60 to 90 days might be reasonable, as Devel::PPPort sees frequent releases). This requires embedding the release timestamp into the file, so it won't work for any existing ppport.h files in the wild of course.  Or, alternatively, the age of the file could be inferred from the latest blead version that the file supports. but since changes need to be made anyway to add these checks, we might as well be direct and use a timestamp.
 
 (Note: a common trick used in toolchain to do author-only warnings, so users installing from cpan do not see the same warnings, is `-d '.git' or !-f 'META.json'`.)
+
+## From LeoNerd:
+
+I'd strongly suggest keeping the variable names on a theme of `MAJOR`.`MINOR`.`PATCH`. As mentioned in https://github.com/Perl/perl5/wiki/Perl-7-Versioning it follows the semver standard.
+
+In addition, it has nice properties that the three components are the same length, and they sort correctly:
+
+```
+perl -MConfig -E 'm/^PERL_VERSION_/ and print "$_ = $Config{$_}\n" for sort keys %Config'
+PERL_VERSION_MAJOR = 7
+PERL_VERSION_MINOR = 1
+PERL_VERSION_PATCH = 3
+```
+
+The proposed other name of `MAJOR`.`MINOR`.`MICRO` does not match semver, and does not sort nicely in this manner.
