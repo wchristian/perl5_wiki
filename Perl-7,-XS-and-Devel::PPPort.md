@@ -179,6 +179,10 @@ ppport.h would do something like this:
 
 As to the version macros I'm not entirely comfortable with making the old PERL_REVISION macros lie, but I don't strongly object to it if it's going to keep backward compatibility that well.  Will `$]` also return 5.999999?
 
+> answer from Nico
+>> ./perl -Ilib -E 'say $]'
+>> 7.001000
+
 ## From ether:
 
 - remove PERL_VERSION and PERL_REVISION macros in p7 core.
@@ -187,6 +191,9 @@ As to the version macros I'm not entirely comfortable with making the old PERL_R
 I would also add a check to all ppport.h versions starting today, advising that the author upgrade if the file is over N days old (with N to be bikeshed but a value of something like 60 to 90 days might be reasonable, as Devel::PPPort sees frequent releases). This requires embedding the release timestamp into the file, so it won't work for any existing ppport.h files in the wild of course.  Or, alternatively, the age of the file could be inferred from the latest blead version that the file supports. but since changes need to be made anyway to add these checks, we might as well be direct and use a timestamp.
 
 (Note: a common trick used in toolchain to do author-only warnings, so users installing from cpan do not see the same warnings, is `-d '.git' or !-f 'META.json'`.)
+
+> answer from Nico
+>> This is a great idea & sounds something we could do in blead once bumped to 7.1.0
 
 ## From LeoNerd:
 
@@ -203,8 +210,18 @@ PERL_VERSION_PATCH = 3
 
 The proposed other name of `MAJOR`.`MINOR`.`MICRO` does not match semver, and does not sort nicely in this manner.
 
+> answer from Nico
+>> This sounds great, would have to synchronize with Karl on this one for D-PPP, but the sooner the better
+>> as we are going to rename all the three variables
+>> This is a great idea
+
 ## From Karl
 
 The values like PERL_VERSION, PERL_MAJOR_VERSION are #define constants, and not variables.  They must be so, as they control what gets compiled and what gets skipped.  It is much harder to deprecate on the use of a preprocessor token, relying on C99 features that are not all that well defined.  xenu has concluded that it is impossible in gcc, but works in clang.  I spent way too long trying to get something to work in gcc, but haven't tried clang.  Is clang in widespread enough use to justify deprecating for just compiles under it?
 
 The idea of putting a timer in ppport.h scares me. D:P wasn't updated for years, and I think that most that can be expected is 4 times a year.  There is also the potential for breakage from new versions, as alh has pointed out.
+
+> answer from Nico
+>> The deprecation warning is something nice to have. If we cannot implement it, I do not think it's a big deal
+>> I agree with the timer idea, it's going to be either wrong or right... 
+>> if network is available we could simply check the last published version on CPAN while using it?
