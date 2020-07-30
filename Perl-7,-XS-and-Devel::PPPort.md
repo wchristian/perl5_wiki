@@ -202,3 +202,9 @@ PERL_VERSION_PATCH = 3
 ```
 
 The proposed other name of `MAJOR`.`MINOR`.`MICRO` does not match semver, and does not sort nicely in this manner.
+
+## From Karl
+
+The values like PERL_VERSION, PERL_MAJOR_VERSION are #define constants, and not variables.  They must be so, as they control what gets compiled and what gets skipped.  It is much harder to deprecate on the use of a preprocessor token, relying on C99 features that are not all that well defined.  xenu has concluded that it is impossible in gcc, but works in clang.  I spent way too long trying to get something to work in gcc, but haven't tried clang.  Is clang in widespread enough use to justify deprecating for just compiles under it?
+
+The idea of putting a timer in ppport.h scares me. D:P wasn't updated for years, and I think that most that can be expected is 4 times a year.  There is also the potential for breakage from new versions, as alh has pointed out.
