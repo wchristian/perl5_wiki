@@ -188,7 +188,7 @@ I'd strongly suggest keeping the variable names on a theme of `MAJOR`.`MINOR`.`P
 In addition, it has nice properties that the three components are the same length, and they sort correctly:
 
 ```
-perl -MConfig -E 'm/^PERL_VERSION_/ and print "$_ = $Config{$_}\n" for sort keys %Config'
+$ perl -MConfig -E 'm/^PERL_VERSION_/ and print "$_ = $Config{$_}\n" for sort keys %Config'
 PERL_VERSION_MAJOR = 7
 PERL_VERSION_MINOR = 1
 PERL_VERSION_PATCH = 3
