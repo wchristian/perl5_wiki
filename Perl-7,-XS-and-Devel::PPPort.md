@@ -150,8 +150,8 @@ The following approach would allow any existing XS code to warn but continue to 
    - `PERL_REVISION  = 5`
    - `PERL_VERSION   = 255` # Something high.
    - `PERL_SUBVERSION= 255`.
-1. Replace these constants in core with something else: `PERL_VERSION_MAJOR`, `PERL_VERSION_MINOR`, `PERL_VERSION_PATCH`
-    - Discourage their use outside of core.
+1. Replace these constants in core with: `PERL_VERSION_MAJOR`, `PERL_VERSION_MINOR`, `PERL_VERSION_PATCH`
+    - Discourage their use outside of core (update pod somewhere)
 1. Encourage the usage of `PERL_VERSION_GT` macros instead.
 1. Update `Devel::PPPort` 
     - Provide version comparison (`PERL_VERSION_LE`, etc.) macros for versions < 7.
