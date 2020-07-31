@@ -189,12 +189,14 @@ As to the version macros I'm not entirely comfortable with making the old PERL_R
 - remove PERL_VERSION and PERL_REVISION macros in p7 core.
 - add PERL_VERSION and PERL_REVISION macros in new Devel::PPPort (shipped with v7 core (and also made available to v5 distributions) - under v7, PERL_VERSION will be fixed to 5 and PERL_REVISION to some high value (as suggested above). under v5 they retain their real values. But add deprecation warnings to them to push authors to switch to the new macros where major and minor versions must be tested together.
 
+> answer from Nico
+>> This is a great idea & sounds something we could do in blead once bumped to 7.1.0
+>> we should deprecate PERL_VERSION & co including PATCHLEVEL and SUBVERSION
+>> they only belong to D-PPP as deprecated
+
 I would also add a check to all ppport.h versions starting today, advising that the author upgrade if the file is over N days old (with N to be bikeshed but a value of something like 60 to 90 days might be reasonable, as Devel::PPPort sees frequent releases). This requires embedding the release timestamp into the file, so it won't work for any existing ppport.h files in the wild of course.  Or, alternatively, the age of the file could be inferred from the latest blead version that the file supports. but since changes need to be made anyway to add these checks, we might as well be direct and use a timestamp.
 
 (Note: a common trick used in toolchain to do author-only warnings, so users installing from cpan do not see the same warnings, is `-d '.git' or !-f 'META.json'`.)
-
-> answer from Nico
->> This is a great idea & sounds something we could do in blead once bumped to 7.1.0
 
 ## From LeoNerd:
 
