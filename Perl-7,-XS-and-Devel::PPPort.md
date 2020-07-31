@@ -150,12 +150,12 @@ The following approach would allow any existing XS code to warn but continue to 
    - `PERL_REVISION  = 5`
    - `PERL_VERSION   = 255` # Something high.
    - `PERL_SUBVERSION= 255`.
-1. Deprecate and warn on any usage of these variables.
-   - gcc has a feature to warn on use of deprecated variables.
-1. Replace these constants in core with something else: `PERL_VERSION_MAJOR`, `PERL_VERSION_MINOR`, `PERL_VERSION_MICRO`
+1. Replace these constants in core with something else: `PERL_VERSION_MAJOR`, `PERL_VERSION_MINOR`, `PERL_VERSION_PATCH`
     - Discourage their use outside of core.
 1. Encourage the usage of `PERL_VERSION_GT` macros instead.
-1. Patch Devel::PPPort to use `PERL_VERSION_LE` macros instead of VERSION checks on perl 7 and above
+1. Update `Devel::PPPort` 
+    - Provide version comparison (`PERL_VERSION_LE`, etc.) macros for versions < 7.
+    - Provide a warning on legacy use of `PERL_REVISION`, `SUBVERSION`, `REVISION`, etc.
 
 ppport.h would do something like this:
 ```c
