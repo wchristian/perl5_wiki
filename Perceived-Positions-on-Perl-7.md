@@ -11,7 +11,7 @@ Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
 
 Pro: Nicolas R., Jim, Sawyer, Todd, Tux, cPanel, Ovid, Karl
 
-Ok with Sawyer's decision: Yves Orton, Stevan Little, John Lightsey, Chris Williams (bingos), Nick Clark, David Golden, Hugo
+Ok with Sawyer's decision: Yves Orton, Stevan Little, John Lightsey, Chris Williams (bingos), David Golden, Hugo
 
 - Perl 7 defaults to [Perl 7 behaviors](Defaults-for-v7) when code is first parsed.
 - Perl 7 does not break well behaved code.
