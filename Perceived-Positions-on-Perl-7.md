@@ -4,7 +4,7 @@ This document attempts to summarize where everyone is at in their preferred plan
 
 At this time we have no information on where these people stand because they have not responded in any known forum.
 
-Craig Berry, Father Chrysostomos, Zefram, Aaron Crane
+Father Chrysostomos, Zefram, Aaron Crane
 
 ## In Perl 7 the defaults change
 
@@ -36,7 +36,7 @@ Tony, PPI folks
 
 ## v5 implied until vX is seen
 
-Leon, Karen, Dave M, Paul, ilmari
+Leon, Karen, Dave M, Paul, ilmari, craigb
 
 - Defaults do not change
 - No widespread breakage of the perl ecosystem
