@@ -4,6 +4,8 @@ This is the proposal with additional details as presented by [xsawyerx](xsawyerx
 
 There are additional details in Sawyer's [update about versioning](https://www.nntp.perl.org/group/perl.perl5.porters/2020/07/msg257817.html).
 
+[view perceived positions on Perl 7](Perceived-Positions-on-Perl-7)
+
 # Intro
 
 7.0.0 will be Perl 5.32.0 but [with new defaults](Defaults-for-v7).
