@@ -1,6 +1,6 @@
 # Intro
 
-This document attempts to summarize where everyone is at in their preferred plan for Perl 7. If you are mentioned here and do not agree, please reach out to us or edit the document. Parsing everyone's changing opinions over time on multiple mediums is very difficult to do accurately.
+This document attempts to summarize where everyone is at in their preferred [plan for Perl 7](The-Proposal-for-Perl-7). If you are mentioned here and do not agree, please reach out to us or edit the document. Parsing everyone's changing opinions over time on multiple mediums is very difficult to do accurately.
 
 At this time we have no information on where these people stand because they have not responded in any known forum.
 
