@@ -2,7 +2,8 @@
 
 The following defaults have been proposed for Perl 7. They were chosen because the belief is that they would break very little well behaved code. 
 
-One or more audits of these defaults against CPAN should be attempted in order to understand how much of it would break if we chose these defaults.
+> One or more audits of these defaults against CPAN must be done in order to understand how much of it would break if each of them is chosen.
+>> The list of defaults is currently a proposal and will be revisited after gathering some metrics.
 
 # On by default
 
