@@ -28,7 +28,7 @@ Ok with Sawyer's decision: Yves Orton, Stevan Little, John Lightsey, Chris Willi
 
 ## v5 implied a year then v5/v7 required in all code.
 
-Tony, PPI folks
+Tony
 
 - use v5 is implied for 7.0.0 in ~45 days
 - require both v5/v7 for perl 7.2.0 June 2021
@@ -36,7 +36,7 @@ Tony, PPI folks
 
 ## v5 implied until vX is seen
 
-Leon, Karen, Dave M, Paul, ilmari, craigb
+Leon, Karen, Dave M, Paul, ilmari, craigb, Mithaldu (PPI)
 
 - Defaults do not change
 - No widespread breakage of the perl ecosystem
