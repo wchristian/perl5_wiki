@@ -2,4 +2,4 @@ You can add docs for feature proposals here where issues/pull requests might be 
 
 * [[The Proposal for Perl 7]]
 * [[Perl Steering Committee]]
-* [[Perl Steering Committee meeting minutes]]
+* [[Past Perl Steering Committee Meeting Minutes]]
