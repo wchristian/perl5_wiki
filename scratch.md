@@ -1,3 +1,3 @@
 Testing links
 
-[@perl/perl5-pushers](@perl/perl5-pushers)
+Mentioning @perl5-pushers
