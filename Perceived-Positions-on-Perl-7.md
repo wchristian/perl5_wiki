@@ -36,7 +36,7 @@ Tony
 
 ## v5 implied until vX is seen
 
-Leon, Karen, Dave M, Paul, ilmari, craigb, Mithaldu (PPI)
+Leon, Karen, Dave M, Paul, ilmari, craigb
 
 - Defaults do not change
 - No widespread breakage of the perl ecosystem
