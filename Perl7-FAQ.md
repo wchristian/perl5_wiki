@@ -1,8 +1,12 @@
 ### What's Perl 7?
 
-Perl 7 is Perl v5.32 with saner, more modern defaults. It's a transitional major version before we get to breaking changes.
+Perl 7 is Perl v5.n (n = current version at that time) with saner, more modern defaults. It's a transitional major version before we get to language-breaking changes. We thought that would be right after v5.32, but some time has passed, and p5p announced that they'd release v5.34 in May 2021.
 
 There's a [Perl 7 proposal](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7) in the wiki for the [perl5 repo](https://github.com/Perl/perl5/).
+
+### What's the state right now?
+
+Perl has made the move to having a three-person Steering Committee instead of the single "pumpking". The Perl Steering Committee controls the future evolution of the language. As of January 2021, they are just getting started and have not made a statement on Perl 7 yet.
 
 ### Why not Perl 32 (or 34)?
 
@@ -16,11 +20,11 @@ We're still talking about that in [Defaults for v7](Defaults-for-v7). We don't k
 
 * enable strict by default
 * enable warnings by default
-* enable some keywords.
+* enable some keywords
 
 ### When will this happen?
 
-We'd like to be done in less than a year. Ideally sooner. 
+The Perl Steering Committee has not released any news on Perl 7.
 
 ### How can I help?
 
@@ -33,15 +37,17 @@ You could also look at this list and provide fixes to the authors who are not ye
 
 ### Will Perl 7 run my Perl 5 code?
 
-If your code can run under Perl 5.32, you should be able to run it under perl 7. Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you may need to fix that. Trying your code under v5.32 will find those problems for you.
+If your code can run under Perl 5.n (n = current), you should be able to run it under Perl 7, although you might have to unset some defaults). Perl 5 has removed features that were deprecated even when v5.0 was released in 1994. If you are using those, you may need to fix those too. Trying your code under v5.n will find many of those problems for you.
 
-There will be a compatibility mode to put code sections back into Perl 5 mode. it will possibly be something simple like `use v5` or `use compat::perl5`
+There may be a compatibility mode to put code sections back into Perl 5 mode. it will possibly be something simple like `use v5` or `use compat::perl5`
+
+But, no one is taking Perl 5 away from you. 
 
 ### What happens to Perl 5?
 
 Perl 5 goes into long term maintenance. That can be as long as a decade or more. You'll still get important security and bug fixes, just for a little bit longer than usual.
 
-The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guarantees support for the previous two maintenance releases. We intend to extend that for 5.32.0.
+The current [Perl support policy](https://perldoc.perl.org/perlpolicy.html) guarantees support for the previous two maintenance releases. We intend to extend that for the ultimate Perl 5 release.
 
 ### What will `/usr/bin/perl` be?
 
@@ -53,7 +59,7 @@ As the user, your decision is likely made for you. If you aren't going to instal
 
 We are endeavoring to make [the scope of the bump to 7.0.0](The-Proposal-for-Perl-7#what-we-need-to-do-before-perl-7) as small as possible to make sure it does happen. 
 
-If Perl 7 doesn't happen, we get Perl v5.34 and keep doing that.
+If Perl 7 doesn't happen, we get Perl v5.(n+2) and keep doing that.
 
 We already have all of the code, there are simply some details to work out. This is more paper shuffling and administrative work than anything else. The Perl community already has the tools in place to test all of CPAN against any Perl release. Perl 7 is more about process adjustment than new code. Hopefully this will also shake out any issues so make future major version bumps easier to deal with.
 
@@ -61,7 +67,7 @@ We have been planning this for a year. We've been carefully considering how big 
 
 ### Will feature X be included?
 
-Perl 7 is v5.32 with different defaults. You won't see new features and you won't have any taken away from you if you're running on v5.32. If it's already in Perl, you can have it. If it isn't, probably not.
+Perl 7 is v5.n with different defaults. You won't see new features and you won't have any taken away from you if you're running on v5.32. If it's already in Perl, you can have it. If it isn't, probably not.
 
 There are many things that people want, a significant amount of excitement is already happening around features we want to see in 7.2. Once that is out, you will already be able to use it by declaring `use v8` in your code.
 
@@ -85,9 +91,9 @@ Perl 6 started as an ambitious effort to completely rewrite Perl. For various re
 
 While we are excited about Perl 7, we're most excited about Perl 8 and beyond. We would like Perl 8 to happen in less than 5 years. It would have several new features enabled by default.
 
-### What about github.com/perl/perl5 is it named wrong now?
+### What about github.com/perl/perl5? Is it named wrong now?
 
-Yes it is. Github will let us rename the repo and redirects should work correctly.
+With Perl 7, a repo named perl5 would be weird. Github will let us rename the repo and redirects should work correctly.
 
 ### What about the perl 5 porters mailing list.
 
@@ -95,7 +101,7 @@ It will soon be anachronistic to call it this. We don't have an answer for this 
 
 ### Is the idea that major numbers will be incremented every so often, like say, the linux kernel? or do you think it will be perl7 for a long time?
 
-Perl 8 will likely come in the next 3-5 years. It will bump defaults, turning on what we hope will be a better language for its users.
+Perl 8 will likely come 3-5 years after Perl 7. That's a rough idea that's saying "not a year but not a decade". We don't even have Perl 7 yet, so we have no idea what Perl 8 could be.
 
 ### How can I find out more about Perl 7?
 
