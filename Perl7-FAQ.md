@@ -1,6 +1,6 @@
 ### What's Perl 7?
 
-Perl 7 is Perl v5.n (n = current version at that time) with saner, more modern defaults. It's a transitional major version before we get to language-breaking changes. We thought that would be right after v5.32, but some time has passed, and p5p announced that they'd release v5.34 in May 2021.
+Perl 7 was proposed to be Perl v5.n (n = current version at that time) with saner, more modern defaults. A transitional major version before we get to language-breaking changes. We thought that would be right after v5.32, but some time has passed, and p5p announced that they'd release v5.34 in May 2021. As well, significant resistance to the proposal was mounted requiring more discussion. At this point nobody knows what changes Perl 7 will actually contain.
 
 There's a [Perl 7 proposal](https://github.com/Perl/perl5/wiki/The-Proposal-for-Perl-7) in the wiki for the [perl5 repo](https://github.com/Perl/perl5/).
 
